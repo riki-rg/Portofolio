@@ -13,7 +13,7 @@ const resultText = document.getElementById('result-text');
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
-const TOTAL_QUESTIONS = 15; // Jumlah Soal
+const TOTAL_QUESTIONS = 20; // Jumlah Soal
 
 const API_URL = `soal.json`;
 
@@ -58,7 +58,7 @@ function displayQuestion() {
 
     const allAnswers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
     
-    const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.5);
+    const shuffledAnswers = allAnswers.sort(() => Math.random() - 0.3);
 
     shuffledAnswers.forEach(answer => {
         const button = document.createElement('button');
@@ -121,4 +121,5 @@ function showResults() {
 
 nextButton.addEventListener('click', handleNextButton);
 playAgainButton.addEventListener('click', startGame);
+
 startGame();
