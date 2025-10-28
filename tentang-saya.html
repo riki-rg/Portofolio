@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Saya - Rizqy Maulana Hakim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0A192F; 
+            --card-color: #172A45; 
+            --text-primary: #CCD6F6;
+            --text-secondary: #8892B0;
+            --accent-color: #64FFDA;
+            --border-color: #304A6E;
+        }
+        [data-theme="light"] {
+            --bg-color: #F5F5F4;
+            --card-color: #FFFFFF;
+            --text-primary: #374151;
+            --text-secondary: #6B7280;
+            --accent-color: #0284C7;
+            --border-color: #E5E7EB;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /*Bintang Jatuh (bug ggak nampil)*/
+        #shooting-stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            animation-name: shoot;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            opacity: 0;
+        }
+        .shooting-star::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(to left, var(--accent-color), transparent);
+        }
+        @keyframes shoot {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-700px, 700px);
+                opacity: 0;
+            }
+        }
+
+        /*Header & Tombol*/
+        .main-header { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 2rem; z-index: 100; display: flex; align-items: center; }
+        .header-logo { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; transition: color 0.3s ease; }
+        .header-logo:hover { color: var(--accent-color); }
+        .back-button { position: fixed; top: 2rem; right: 2rem; width: 50px; height: 50px; background-color: var(--card-color); border: 1px solid var(--border-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; color: var(--text-secondary); font-size: 1.5rem; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: all 0.3s ease; }
+        .back-button:hover { background-color: var(--accent-color); color: var(--bg-color); transform: scale(1.1) rotate(-15deg); border-color: var(--accent-color); }
+        .theme-toggle { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--navbar-bg, rgba(23, 42, 69, 0.7)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 99px; z-index: 100; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease, border-color 0.3s ease; color: var(--text-secondary); font-size: 1.2rem; padding: 0.8rem; transition: color 0.2s ease; background: none; cursor: pointer; line-height: 0; }
+        .theme-toggle:hover { color: var(--accent-color); }
+        
+        /*Main*/
+        .page-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 8rem auto 4rem auto;
+            align-items: flex-start;
+        }
+        .left-column {
+            position: sticky;
+            top: 8rem;
+            text-align: center;
+        }
+        .profile-picture-container {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 4px solid var(--border-color);
+            overflow: hidden;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .profile-picture-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .left-column h1 { font-size: 2.5rem; color: var(--text-primary); margin: 0; }
+        .left-column p { font-size: 1.1rem; color: var(--text-secondary); margin-top: 0.5rem; }
+        .right-column { background-color: var(--card-color); border-radius: 1.25rem; border: 1px solid var(--border-color); padding: 2rem; position: relative; z-index: 1; }
+        
+        /*fix buggggg duhahfiuah*/
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before { content: ''; position: absolute; left: 0; width: 2px; height: 100%; background-color: var(--border-color); z-index: 1; }
+        .timeline-item { position: relative; margin-bottom: 3rem; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .timeline-item.revealed { opacity: 1; transform: translateY(0); }
+        
+        .timeline-content {
+            position: relative;
+            z-index: 3; /* Lokasi chart */
+            background-color: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+        .timeline-content h3 { margin-top: 0; color: var(--accent-color); font-size: 1.4rem; }
+        .timeline-content p, .timeline-content ul { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+        .timeline-content ul { padding-left: 1.2rem; list-style: none; }
+        .timeline-content ul li::before { content: "📌 "; display: inline-block; width: 1.2em; margin-left: -1.2em; }
+        
+        .timeline-point {
+            position: absolute;
+            top: 0.5rem;
+            left: -9px;
+            width: 18px;
+            height: 18px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--bg-color);
+            z-index: 4; /* Lokasi titik */
+            transition: transform 0.3s ease;
+        }
+        .timeline-item:hover .timeline-point { transform: scale(1.4); }
+
+        /* Body dan lain-lain */
+        .section { margin-top: 4rem; }
+        .section h2 { font-size: 2rem; color: var(--text-primary); margin-bottom: 2rem; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .skill-tag { background-color: var(--bg-color); border: 1px solid var(--border-color); color: var(--accent-color); padding: 0.7rem 1.2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; }
+        .skill-tag:hover { background-color: var(--accent-color); color: var(--bg-color); transform: translateY(-3px); border-color: var(--accent-color); }
+        .hobbies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; text-align: left; }
+        .hobby-item { background-color: var(--bg-color); padding: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--border-color); }
+        .hobby-item .hobby-title { display: flex; align-items: center; gap: 0.75rem; color: var(--text-primary); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .hobby-item .hobby-title i { color: var(--accent-color); font-size: 1.5rem; }
+        .hobby-item p { font-size: 0.95rem; color: var(--text-secondary); margin: 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 0.5rem; aspect-ratio: 1 / 1; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease, filter 0.4s ease; }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.8); }
+        .cta-section { text-align: center; padding: 3rem 1rem; margin-top: 4rem; background-color: var(--bg-color); border-radius: 0.75rem; border: 1px solid var(--border-color); }
+        .cta-section h2 { border: none; font-size: 1.8rem; }
+        .cta-section p { color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto; }
+        .cta-button { background-color: var(--accent-color); color: var(--bg-color); padding: 1rem 3rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; display: inline-block; }
+        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2); }
+
+        @media (max-width: 900px) {
+            .page-container { grid-template-columns: 1fr; }
+            .left-column { position: static; margin-bottom: 3rem; }
+            .right-column { padding: 1.5rem; }
+            .timeline { padding-left: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="shooting-stars-container"></div>
+    <header class="main-header">
+        <a href="index.html" class="header-logo">RMH</a> 
+    </header>
+    <a href="portofolio.html" class="back-button" title="Kembali ke Portofolio Utama">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+    <button class="theme-toggle" id="theme-toggle" title="Ganti Tema">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+    <main class="page-container">
+        <aside class="left-column">
+            <div class="profile-picture-container">
+                <img src="Assets/Rizqy2.jpg" alt="Rizzy">
+            </div>
+            <h1>Rizqy Maulana Hakim</h1>
+            <p>Mahasiswa & Tech Enthusiast</p>
+        </aside>
+        <div class="right-column">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-point"></span>
+                    <div class="timeline-content">
+                        <h3>latar Belakang</h3>
+                        <p>Saya adalah seorang Mahasiswa UMKU yang sedang menempuh pendidikan di prodi S1 Sistem Informasi, data diri sya sebagai berikut.</p>
+                        <ul>
+                            <li>Nama : Rizqy Maulana Hakim</li>
+                            <li>TTL : Jepara, 21-08-2007</li>
+                            <li>Alamat : di Mayong, Jepara</li>
+                            <li>Riwayat Pendidikan : <br> SD N 1 Pelemkerep <br> SMP N 1 Mayong <br> SMA Muhammadiyah 2 Mayong</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-point"></span>
+                    <div class="timeline-content">
+                        <h3>Minat Ke Pemrograman</h3>
+                        <p>Sejak bangku SMP saya sudah memiliki minat dalam coding, bahasa pertama yang saya pelajari waktu itu adalah pawno alasan saya memelajari bahasa tersebu adalah karna saya agak tertarik di game SA-MP, mulai dari itu saya jadi semakin memeiliki minat di coding dan mempelajari banyak sekali bahasa pemrograman seperti Phython, C++, JS, PHP, dll</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-point"></span>
+                    <div class="timeline-content">
+                        <h3>Visi & Minat Saat Ini</h3>
+                        <p>Saat ini, fokus utama saya adalah memperdalam pengetahuan di bidang UI/UX Design dan Web Development. Saya percaya, kombinasi keahlian desain dan infrastruktur memungkinkan saya menciptakan solusi untuk banyak masalah yang terjadi di dunia ini.</p>
+                    </div>
+                </div>
+            </div>
+            <section class="section skills-section">
+                <h2>Keahlian Utama</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag"><i class="fa-solid fa-code"></i> Web Development</div>
+                    <div class="skill-tag"><i class="fa-solid fa-palette"></i> UI/UX Design</div>
+                </div>
+            </section>
+            <section class="section hobbies-section">
+                <h2>Hobi & Minat</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-item">
+                        <span class="hobby-title"><i class="fa-solid fa-code"></i> Ngoding</span>
+                        <p>Mengeksplorasi teknologi dan menciptakan solusi digital yang inovatif.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-title"><i class="fa-solid fa-dumbbell"></i> Gym & Olahraga</span>
+                        <p>Menjaga kebugaran fisik melalui angkat beban, futsal, dan lari.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-title"><i class="fa-solid fa-book-open"></i> Membaca Novel</span>
+                        <p>Tenggelam dalam dunia fiksi untuk menambah wawasan dan imajinasi.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-title"><i class="fa-solid fa-gamepad"></i> Bermain Game</span>
+                        <p>Menenagkan pikiran dengan bermain game seperti MLBB, COC, HOK, PUBG, Theo Town, dll.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section gallery-section">
+                <h2>Galeri Saya</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="Assets/cooming-soon.jpg" alt="Foto Galeri 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/cooming-soon.jpg" alt="Foto Galeri 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Assets/cooming-soon.jpg" alt="Foto Galeri 3">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        //LIGHT/DARK MODE
+        const themeToggle = document.getElementById('theme-toggle');
+        const moonIcon = '<i class="fa-solid fa-moon"></i>';
+        const sunIcon = '<i class="fa-solid fa-sun"></i>';
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'light') { themeToggle.innerHTML = sunIcon; }
+        }
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark' || !theme) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = sunIcon;
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = moonIcon;
+            }
+        });
+
+        //ANIMASI SCROLL
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                } else {
+                    entry.target.classList.remove('revealed');
+                }
+            });
+        }, {
+            threshold: 0.85
+        });
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        //EFEK BINTANG JATUH (BUG GAK NAMPIL)
+        const starContainer = document.getElementById('shooting-stars-container');
+        const numStars = 15;
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('shooting-star');
+            const startTop = Math.random() * 80;
+            const startLeft = Math.random() * 80 + 10;
+            const duration = Math.random() * 4 + 3;
+            const delay = Math.random() * 10;
+            star.style.top = '${startTop}%';
+            star.style.left = '${startLeft}%';
+            star.style.animationDuration = '${duration}s';
+            star.style.animationDelay = '${delay}s';
+            starContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>

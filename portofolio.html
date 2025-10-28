@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rizqy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Data Warna */
+        :root {
+            --bg-color: #0A192F; 
+            --card-color: #172A45; 
+            --text-primary: #CCD6F6;
+            --text-secondary: #8892B0;
+            --accent-color: #64FFDA;
+            --border-color: #304A6E;
+            --navbar-bg: rgba(23, 42, 69, 0.7);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #F5F5F4;
+            --card-color: #FFFFFF;
+            --text-primary: #374151;
+            --text-secondary: #6B7280;
+            --accent-color: #0284C7;
+            --border-color: #E5E7EB;
+            --navbar-bg: rgba(255, 255, 255, 0.7);
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            padding-bottom: 100px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        #background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            position: absolute;
+            color: var(--border-color);
+            opacity: 0.1;
+            transition: color 0.3s ease;
+            animation: float 20s infinite ease-in-out alternate;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        @keyframes float {
+            from { transform: translateY(-20px) rotate(-15deg); }
+            to { transform: translateY(20px) rotate(15deg); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes drift {
+            from { transform: translate(-30px, -40px); }
+            to { transform: translate(30px, 40px); }
+        }
+
+
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+        }
+        .header-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .header-logo:hover {
+            color: var(--accent-color);
+        }
+
+        .games-button {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-color);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .games-button:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: scale(1.1) rotate(15deg);
+            border-color: var(--accent-color);
+        }
+        
+        .symbol-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .bento-container {
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-auto-rows: 180px;
+            gap: 1.25rem; 
+            width: 100%; 
+            max-width: 1000px;
+            margin: auto;
+            margin-top: 5rem;
+        }
+        
+        .bento-item {
+            position: relative; 
+            background-color: var(--card-color); 
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem; 
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            z-index: 1;
+        }
+        
+        .bento-item:hover {
+            border-color: var(--accent-color);
+        }
+
+        .item-1 { grid-column: span 2; grid-row: span 2; justify-content: space-between; }
+        .item-tech { grid-row: span 2; }
+        .item-social { grid-row: span 2; }
+        .item-5 { grid-column: span 2; }
+        .item-6 { grid-column: span 2; grid-row: span 2; }
+
+        .item-contact-form {
+            grid-column: span 2;
+            padding: 1rem 1.5rem;
+        }
+        
+        .bento-item h3 { margin: 0 0 1.5rem 0; font-weight: 700; color: var(--text-primary); transition: color 0.3s ease; }
+        .tech-stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 1.5rem; align-items: center; justify-items: center; height: 100%; }
+        .tech-logo { width: 45px; height: 45px; transition: transform 0.3s ease; }
+        .tech-logo:hover { transform: scale(1.2); }
+        .social-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; height: 100%; align-content: start; }
+        .social-links-grid a { color: var(--text-secondary); text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 0.75rem; transition: color 0.2s ease; }
+        .social-links-grid a:hover { color: var(--accent-color); }
+        .social-links-grid i { font-size: 1.2rem; width: 20px; text-align: center; }
+        .bottom-nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--navbar-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 99px; padding: 0.5rem 1rem; display: flex; gap: 1rem; align-items: center; z-index: 100; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease, border-color 0.3s ease; }
+        .nav-link, .theme-toggle { color: var(--text-secondary); font-size: 1.2rem; text-decoration: none; padding: 0.5rem; transition: color 0.2s ease; }
+        .nav-link:hover, .theme-toggle:hover { color: var(--accent-color); }
+        .theme-toggle { background: none; border: none; cursor: pointer; }
+        .profil-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .profil-pic { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--border-color); }
+        .profil-bio { font-size: 1rem; flex-grow: 1; }
+        .item-6 iframe { width: 100%; height: 100%; border: 0; border-radius: 1rem; margin-top: 1rem; transition: filter 0.3s ease; }
+        [data-theme="dark"] .item-6 iframe { filter: invert(1) hue-rotate(180deg); }
+        .bento-link { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; border-radius: 1.25rem; }
+        .bento-item a:not(.bento-link) { position: relative; z-index: 11; color: var(--accent-color); text-decoration: none; font-weight: 500; }
+        .bento-item a:not(.bento-link):hover { text-decoration: underline; }
+        
+        /* Formulir */
+        .item-contact-form form { display: flex; flex-direction: column; gap: 0.75rem; height: 100%; }
+        .form-group { display: flex; gap: 0.75rem; }
+        .item-contact-form input, .item-contact-form textarea { width: 100%; background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.75rem; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: border-color 0.3s ease; }
+        .item-contact-form input:focus, .item-contact-form textarea:focus { outline: none; border-color: var(--accent-color); }
+        .item-contact-form textarea { resize: none; flex-grow: 1; }
+        .item-contact-form button { background-color: var(--accent-color); border: none; border-radius: 0.5rem; padding: 0.75rem; color: var(--bg-color); font-weight: bold; font-size: 0.9rem; cursor: pointer; transition: opacity 0.3s ease; }
+        .item-contact-form button:hover { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; padding-bottom: 100px; overflow-y: auto; }
+            .bento-container { grid-template-columns: 1fr; grid-auto-rows: auto; margin-top: 3rem; }
+            .item-1, .item-tech, .item-social, .item-5, .item-6, .item-contact-form { grid-column: span 1; grid-row: span 1; }
+            .games-button { top: 1rem; right: 1rem; width: 45px; height: 45px; font-size: 1.2rem; }
+            .main-header { padding: 1rem 1rem; }
+            .header-logo { font-size: 1.2rem; }
+            .form-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div id="background-shapes"></div>
+    
+    <header class="main-header">
+        <a href="index.html" class="header-logo">RMH</a> 
+    </header>
+
+    <a href="games.html" class="games-button" title="Koleksi Game Saya">
+        <i class="fa-solid fa-gamepad"></i>
+    </a>
+
+    <main class="bento-container">
+        <div class="bento-item item-1" id="profil">
+            <div class="profil-header">
+                <img src="Assets/Rizqy3.jpg" alt="Foto Profil" class="profil-pic">
+                <div class="profil-info">
+                    <h2>Rizqy Maulana Hakim</h2>
+                    <p>UI/UX Designer & Web Developer</p>
+                </div>
+            </div>
+            <p class="profil-bio">Selamat datang di situs saya! Saya Rizqy Maulana Hakim, adalah seorang ui/UX Designer & Web Developer yang masih menempuh pendidika di Unversitas Muhammadiyah Kudus(UMKU). Jika igin melihat saya lebih lanjut bisa di click ya chart nya.</p>
+            <a href="tentang-saya.html" class="bento-link" aria-label="Lihat profil lengkap"></a>
+        </div>
+        <div class="bento-item item-tech" id="teknologi">
+            <h3>Keahlian Saya</h3>
+            <div class="tech-stack">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" class="tech-logo" title="HTML5">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" class="tech-logo" title="CSS3">
+                <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="tech-logo" title="JavaScript">
+                <img src="https://cdn.simpleicons.org/react" alt="React" class="tech-logo" title="React">
+                <img src="https://cdn.simpleicons.org/cplusplus" alt="C++" class="tech-logo" title="C++">
+                <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" class="tech-logo" title="Node.js">
+            </div>
+            <a href="skills.html" class="bento-link" aria-label="Lihat detail teknologi"></a>
+        </div>
+        <div class="bento-item item-social">
+            <h3>Media Sosial</h3>
+            <div class="social-links-grid"> 
+                <a href="https://www.instagram.com/rizqyhakim_?igsh=MW8xbmlkZWxlN2s4OA=="><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://www.facebook.com/share/179RLd2tZq/"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="http://wa.me/+6285742174564"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.tiktok.com/@kwgeugsi?_t=ZS-90IcmIF6wdw&_r=1"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/rizqy-maulana-hakim-502a80373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fa-brands fa-steam"></i> Steam</a>
+                <a href="#"><i class="fa-solid fa-gamepad"></i> Epic Games</a>
+            </div>
+        </div>
+        <div class="bento-item item-5" id="kontak">
+            <h3>Tertarik Bekerja Sama?</h3>
+            <p>Gunakan formulir di bawah ini atau kirim email langsung ke <a href="https://mail.google.com/mail/u/0/#inbox?compose=lqrsljbsSJHznsRWMPclfgQGxlvNDCcDWHpRgFpGWcdfKNZrBTKNBzkWfTvrDBfJqnGVtntQKFLRjnzvf">rizqymaulanahakim1@gmail.com</a></p>
+        </div>
+        <div class="bento-item item-6">
+            <h3>Rumah Saya</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1360.96897355349!2d110.75512751310139!3d-6.745736352674251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sid!2sid!4v1759676808037!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <div class="bento-item item-contact-form">
+            <form action="https://formspree.io/f/xyznppwd" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Nama Anda" required>
+                    <input type="email" name="email" placeholder="Email Anda" required>
+                </div>
+                <textarea name="message" placeholder="Pesan Anda..." rows="4" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#profil" class="nav-link" title="Profil"><i class="fa-solid fa-user"></i></a>
+        <a href="#teknologi" class="nav-link" title="Teknologi"><i class="fa-solid fa-code"></i></a>
+        <a href="#kontak" class="nav-link" title="Kontak"><i class="fa-solid fa-envelope"></i></a>
+        <button class="theme-toggle" id="theme-toggle" title="Ganti Tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // (Script GSAP Fade Up & Magnetic/Tilt Effect)
+        gsap.set(".bento-item", { opacity: 0, y: 50 });
+        gsap.to(".bento-item", { duration: 0.8, y: 0, opacity: 1, stagger: 0.1, ease: "power2.out" });
+        const bentoItems = document.querySelectorAll('.bento-item');
+        bentoItems.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - (rect.left + rect.width / 2);
+                const y = e.clientY - (rect.top + rect.height / 2);
+                const rotateX = (y / rect.height) * -20;
+                const rotateY = (x / rect.width) * 20;
+                const magneticStrength = 0.05;
+                const translateX = x * magneticStrength;
+                const translateY = y * magneticStrength;
+                gsap.to(item, { duration: 0.7, rotationX: rotateX, rotationY: rotateY, scale: 1.03, x: translateX, y: translateY, ease: "power1.out", transformPerspective: 1000 });
+            });
+            item.addEventListener('mouseleave', () => {
+                gsap.to(item, { duration: 1, rotationX: 0, rotationY: 0, scale: 1, x: 0, y: 0, ease: "elastic.out(1, 0.5)" });
+            });
+        });
+        
+        // Efek Partikel bg
+        const particleSymbols = ['1', '0', '{}', '<>', '/>', '()', '=>', ';', '#', '&', '*', '+', '-', '='];
+        const particleColors = ["#38EBC0", "#3C64E6", "#05F709", "#F7F305", "FAFFOO"];
+        const mouse = { x: 0, y: 0 };
+        window.addEventListener("mousemove", (event) => { mouse.x = event.clientX; mouse.y = event.clientY; });
+
+        function createSymbolParticle() {
+            const particle = document.createElement("div");
+            particle.className = "symbol-particle";
+            document.body.appendChild(particle);
+
+            const symbol = particleSymbols[Math.floor(Math.random() * particleSymbols.length)];
+            const size = gsap.utils.random(10, 20);
+            const color = gsap.utils.random(particleColors);
+
+            gsap.set(particle, {
+                x: mouse.x, y: mouse.y, fontSize: `${size}px`, color: color, textContent: symbol,
+            });
+
+            gsap.to(particle, {
+                duration: gsap.utils.random(0.8, 1.8),
+                x: '+=gsap.utils.random(-80, 80)', y: '+=gsap.utils.random(-80, 80)',
+                opacity: 0, scale: 0.5, rotation: gsap.utils.random(-360, 360),
+                ease: "power2.out", onComplete: () => { particle.remove(); }
+            });
+        }
+
+        gsap.ticker.add(() => { if (Math.random() < 0.6) { createSymbolParticle(); } });
+
+        // partikel ben acak
+        const shapesContainer = document.getElementById('background-shapes');
+        const numShapes = 25;
+        const devSymbols = ['1', '0', '{}', '<>', '/>', '()', '=>', '∆', '[]', ';', '#'];
+        const animations = ['float', 'spin', 'drift'];
+
+        for (let i = 0; i < numShapes; i++) {
+            const shape = document.createElement('div');
+            shape.classList.add('bg-shape');
+            shape.textContent = devSymbols[Math.floor(Math.random() * devSymbols.length)];
+            const size = Math.random() * 30 + 15;
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const animationDuration = Math.random() * 20 + 20;
+            const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+            shape.style.fontSize = `${size}px`;
+            shape.style.top = `${top}%`;
+            shape.style.left = `${left}%`;
+            shape.style.animation = `${randomAnimation} ${animationDuration}s infinite ease-in-out alternate`;
+            shape.style.animationDelay = `${Math.random() * 10}s`;
+            shapesContainer.appendChild(shape);
+        }
+
+        // Mode Ligt & Dark
+        const themeToggle = document.getElementById('theme-toggle');
+        const moonIcon = '<i class="fa-solid fa-moon"></i>';
+        const sunIcon = '<i class="fa-solid fa-sun"></i>';
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'light') { themeToggle.innerHTML = sunIcon; }
+        }
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark' || !theme) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = sunIcon;
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = moonIcon;
+            }
+        });
+    </script>
+</body>
+</html>
