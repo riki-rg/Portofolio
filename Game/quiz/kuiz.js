@@ -1,4 +1,3 @@
-// --- 1. MEMILIH ELEMEN DARI HTML ---
 const loadingContainer = document.getElementById('loading');
 const quizContainer = document.getElementById('quiz-content');
 const resultContainer = document.getElementById('result-container');
@@ -137,3 +136,4 @@ function showResults() {
 nextButton.addEventListener('click', handleNextButton);
 playAgainButton.addEventListener('click', startGame);
 startGame();
+
