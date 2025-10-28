@@ -354,9 +354,9 @@
     "question": "Unsur kimia apakah yang memiliki simbol 'Au'?",
     "correct_answer": "Emas",
     "incorrect_answers": [
-      "Perak (Ag)",
-      "Besi (Fe)",
-      "Argon (Ar)"
+      "Perak",
+      "Besi",
+      "Argon"
     ]
   },
   {
@@ -478,7 +478,7 @@
   },
   {
     "question": "Apa nama patung ikonik di Rio de Janeiro, Brasil?",
-    "correct_answer": "Christ the Redeemer (Kristus Penebus)",
+    "correct_answer": "Christ the Redeemer",
     "incorrect_answers": [
       "Patung Liberty",
       "Patung David",
@@ -568,7 +568,7 @@
   },
   {
     "question": "Mamalia terbesar di dunia adalah...",
-    "correct_answer": "Paus Biru (Blue Whale)",
+    "correct_answer": "Paus Biru",
     "incorrect_answers": [
       "Gajah Afrika",
       "Jerapah",
@@ -676,11 +676,11 @@
   },
   {
     "question": "Proses perubahan uap air menjadi air (cair) disebut...",
-    "correct_answer": "Kondensasi (Pengembunan)",
+    "correct_answer": "Kondensasi",
     "incorrect_answers": [
-      "Evaporasi (Penguapan)",
-      "Sublimasi (Menyublim)",
-      "Presipitasi (Pengendapan)"
+      "Evaporasi",
+      "Sublimasi",
+      "Presipitasi"
     ]
   },
   {
@@ -694,7 +694,7 @@
   },
   {
     "question": "Alat apa yang digunakan untuk mengukur kekuatan gempa bumi?",
-    "correct_answer": "Seismograf (menggunakan Skala Richter/Magnitudo)",
+    "correct_answer": "Seismograf",
     "incorrect_answers": [
       "Termometer",
       "Barometer",
@@ -1146,9 +1146,9 @@
     "question": "Apa nama bandara internasional utama yang melayani Jakarta?",
     "correct_answer": "Soekarno-Hatta",
     "incorrect_answers": [
-      "Juanda (Surabaya)",
-      "Ngurah Rai (Bali)",
-      "Kualanamu (Medan)"
+      "Juanda",
+      "Ngurah Rai",
+      "Kualanamu"
     ]
   },
   {
@@ -1281,9 +1281,9 @@
     "question": "Apa nama piala yang diberikan kepada pemenang kejuaraan NBA (Basket)?",
     "correct_answer": "Larry O'Brien Championship Trophy",
     "incorrect_answers": [
-      "Stanley Cup (Hoki)",
-      "Vince Lombardi Trophy (American Football)",
-      "World Series Trophy (Bisbol)"
+      "Stanley Cup",
+      "Vince Lombardi Trophy",
+      "World Series Trophy"
     ]
   },
   {
@@ -1416,9 +1416,9 @@
     "question": "Apa sebutan untuk dokter spesialis jantung?",
     "correct_answer": "Kardiolog",
     "incorrect_answers": [
-      "Dermatolog (Kulit)",
-      "Neurolog (Saraf)",
-      "Pediatris (Anak)"
+      "Dermatolog",
+      "Neurolog",
+      "Pediatris"
     ]
   },
   {
@@ -1453,7 +1453,7 @@
     "correct_answer": "Greenland (Tanah Hijau)",
     "incorrect_answers": [
       "Australia",
-      "Kalimantan (Borneo)",
+      "Kalimantan",
       "Madagaskar"
     ]
   },
@@ -1497,18 +1497,18 @@
     "question": "Apa simbol kimia untuk unsur Perak?",
     "correct_answer": "Ag",
     "incorrect_answers": [
-      "Au (Emas)",
-      "Pb (Timah)",
-      "Fe (Besi)"
+      "Au",
+      "Pb",
+      "Fe"
     ]
   },
   {
     "question": "Apa simbol kimia untuk unsur Natrium (Sodium)?",
     "correct_answer": "Na",
     "incorrect_answers": [
-      "N (Nitrogen)",
-      "S (Sulfur)",
-      "K (Kalium)"
+      "N",
+      "S",
+      "K"
     ]
   },
   {
@@ -1684,11 +1684,11 @@
   },
   {
     "question": "Apa nama sup asam pedas terkenal yang berasal dari Thailand?",
-    "correct_answer": "Tom Yum (Tom Yam)",
+    "correct_answer": "Tom Yum",
     "incorrect_answers": [
-      "Pho (Vietnam)",
-      "Ramen (Jepang)",
-      "Laksa (Malaysia/Singapura)"
+      "Pho",
+      "Ramen",
+      "Laksa"
     ]
   },
   {
@@ -1894,7 +1894,7 @@
     "correct_answer": "300.000 km/detik",
     "incorrect_answers": [
       "150.000 km/detik",
-      "343 m/detik (kecepatan suara)",
+      "343 m/detik",
       "1.000.000 km/detik"
     ]
   }
