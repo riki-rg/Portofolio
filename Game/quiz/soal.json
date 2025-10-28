@@ -583,5 +583,1319 @@
       "Alfred Russel Wallace",
       "Louis Pasteur"
     ]
+  },
+  {
+    "question": "Apa ibukota dari Italia?",
+    "correct_answer": "Roma",
+    "incorrect_answers": [
+      "Milan",
+      "Venesia",
+      "Napoli"
+    ]
+  },
+  {
+    "question": "Negara terluas di dunia berdasarkan total wilayah adalah...",
+    "correct_answer": "Rusia",
+    "incorrect_answers": [
+      "Kanada",
+      "China",
+      "Amerika Serikat"
+    ]
+  },
+  {
+    "question": "Siapakah kaisar Perancis yang terkenal karena menaklukkan sebagian besar Eropa?",
+    "correct_answer": "Napoleon Bonaparte",
+    "incorrect_answers": [
+      "Louis XIV",
+      "Charlemagne",
+      "Julius Caesar"
+    ]
+  },
+  {
+    "question": "Kapan Indonesia secara resmi memproklamasikan kemerdekaannya?",
+    "correct_answer": "17 Agustus 1945",
+    "incorrect_answers": [
+      "18 Agustus 1945",
+      "1 Maret 1949",
+      "28 Oktober 1928"
+    ]
+  },
+  {
+    "question": "Siapakah yang menjahit Bendera Pusaka Merah Putih?",
+    "correct_answer": "Fatmawati",
+    "incorrect_answers": [
+      "R.A. Kartini",
+      "Cut Nyak Dien",
+      "Dewi Sartika"
+    ]
+  },
+  {
+    "question": "Perang Dunia I dimulai pada tahun...",
+    "correct_answer": "1914",
+    "incorrect_answers": [
+      "1918",
+      "1939",
+      "1905"
+    ]
+  },
+  {
+    "question": "Peradaban kuno manakah yang membangun kompleks Piramida Giza?",
+    "correct_answer": "Mesir Kuno",
+    "incorrect_answers": [
+      "Romawi Kuno",
+      "Yunani Kuno",
+      "Peradaban Maya"
+    ]
+  },
+  {
+    "question": "Apa gas yang paling melimpah di atmosfer Bumi?",
+    "correct_answer": "Nitrogen",
+    "incorrect_answers": [
+      "Oksigen",
+      "Karbon Dioksida",
+      "Argon"
+    ]
+  },
+  {
+    "question": "Berapa perkiraan jumlah tulang pada orang dewasa?",
+    "correct_answer": "206",
+    "incorrect_answers": [
+      "201",
+      "212",
+      "198"
+    ]
+  },
+  {
+    "question": "Apa simbol kimia untuk unsur Besi?",
+    "correct_answer": "Fe",
+    "incorrect_answers": [
+      "Be",
+      "Ir",
+      "F"
+    ]
+  },
+  {
+    "question": "Proses perubahan uap air menjadi air (cair) disebut...",
+    "correct_answer": "Kondensasi (Pengembunan)",
+    "incorrect_answers": [
+      "Evaporasi (Penguapan)",
+      "Sublimasi (Menyublim)",
+      "Presipitasi (Pengendapan)"
+    ]
+  },
+  {
+    "question": "Planet manakah yang dikenal sebagai 'Planet Merah'?",
+    "correct_answer": "Mars",
+    "incorrect_answers": [
+      "Venus",
+      "Jupiter",
+      "Merkurius"
+    ]
+  },
+  {
+    "question": "Alat apa yang digunakan untuk mengukur kekuatan gempa bumi?",
+    "correct_answer": "Seismograf (menggunakan Skala Richter/Magnitudo)",
+    "incorrect_answers": [
+      "Termometer",
+      "Barometer",
+      "Anemometer"
+    ]
+  },
+  {
+    "question": "Siapakah penulis tragedi 'Romeo dan Juliet'?",
+    "correct_answer": "William Shakespeare",
+    "incorrect_answers": [
+      "Charles Dickens",
+      "Jane Austen",
+      "Leo Tolstoy"
+    ]
+  },
+  {
+    "question": "Siapakah seniman yang melukis 'The Scream' (Jeritan)?",
+    "correct_answer": "Edvard Munch",
+    "incorrect_answers": [
+      "Vincent van Gogh",
+      "Salvador Dalí",
+      "Pablo Picasso"
+    ]
+  },
+  {
+    "question": "Di negara manakah gerakan Renaisans (Renaissance) dimulai?",
+    "correct_answer": "Italia",
+    "incorrect_answers": [
+      "Perancis",
+      "Inggris",
+      "Spanyol"
+    ]
+  },
+  {
+    "question": "Siapakah pematung yang membuat patung 'David' yang terkenal?",
+    "correct_answer": "Michelangelo",
+    "incorrect_answers": [
+      "Donatello",
+      "Leonardo da Vinci",
+      "Raphael"
+    ]
+  },
+  {
+    "question": "Siapakah pencipta lagu kebangsaan 'Indonesia Raya'?",
+    "correct_answer": "Wage Rudolf Soepratman",
+    "incorrect_answers": [
+      "Ismail Marzuki",
+      "Cornel Simanjuntak",
+      "Ibu Sud"
+    ]
+  },
+  {
+    "question": "Apa nama museum di Paris yang menyimpan lukisan 'Mona Lisa'?",
+    "correct_answer": "Museum Louvre",
+    "incorrect_answers": [
+      "Museum d'Orsay",
+      "Centre Pompidou",
+      "British Museum"
+    ]
+  },
+  {
+    "question": "Grup musik 'The Beatles' berasal dari kota mana?",
+    "correct_answer": "Liverpool",
+    "incorrect_answers": [
+      "London",
+      "Manchester",
+      "Birmingham"
+    ]
+  },
+  {
+    "question": "Siapakah sutradara film 'Titanic' (1997)?",
+    "correct_answer": "James Cameron",
+    "incorrect_answers": [
+      "Steven Spielberg",
+      "Christopher Nolan",
+      "Martin Scorsese"
+    ]
+  },
+  {
+    "question": "Apa nama turnamen tenis Grand Slam tertua di dunia?",
+    "correct_answer": "Wimbledon",
+    "incorrect_answers": [
+      "French Open (Roland Garros)",
+      "US Open",
+      "Australian Open"
+    ]
+  },
+  {
+    "question": "Berapa jumlah cincin (rings) pada logo Olimpiade?",
+    "correct_answer": "5",
+    "incorrect_answers": [
+      "4",
+      "6",
+      "7"
+    ]
+  },
+  {
+    "question": "Siapakah musisi yang dijuluki sebagai 'King of Pop'?",
+    "correct_answer": "Michael Jackson",
+    "incorrect_answers": [
+      "Elvis Presley",
+      "Freddie Mercury",
+      "Prince"
+    ]
+  },
+  {
+    "question": "Di negara manakah Piala Dunia FIFA pertama kali diadakan (1930)?",
+    "correct_answer": "Uruguay",
+    "incorrect_answers": [
+      "Brasil",
+      "Italia",
+      "Perancis"
+    ]
+  },
+  {
+    "question": "Apa nama sekolah sihir dalam seri 'Harry Potter'?",
+    "correct_answer": "Hogwarts",
+    "incorrect_answers": [
+      "Durmstrang",
+      "Beauxbatons",
+      "Ilvermorny"
+    ]
+  },
+  {
+    "question": "Superhero DC Comics manakah yang dikenal sebagai 'Man of Steel'?",
+    "correct_answer": "Superman",
+    "incorrect_answers": [
+      "Batman",
+      "Wonder Woman",
+      "The Flash"
+    ]
+  },
+  {
+    "question": "Siapa pendiri utama Facebook (sekarang Meta)?",
+    "correct_answer": "Mark Zuckerberg",
+    "incorrect_answers": [
+      "Elon Musk",
+      "Jeff Bezos",
+      "Larry Page"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari CPU dalam komputer?",
+    "correct_answer": "Central Processing Unit",
+    "incorrect_answers": [
+      "Computer Personal Unit",
+      "Central Power Unit",
+      "Core Processing Unit"
+    ]
+  },
+  {
+    "question": "Apa nama mata uang kripto (cryptocurrency) pertama dan paling terkenal?",
+    "correct_answer": "Bitcoin",
+    "incorrect_answers": [
+      "Ethereum",
+      "Dogecoin",
+      "Litecoin"
+    ]
+  },
+  {
+    "question": "Perusahaan teknologi manakah yang membuat sistem operasi Windows?",
+    "correct_answer": "Microsoft",
+    "incorrect_answers": [
+      "Apple",
+      "Google",
+      "IBM"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari URL?",
+    "correct_answer": "Uniform Resource Locator",
+    "incorrect_answers": [
+      "Universal Reference Link",
+      "Uniform Resource Link",
+      "Universal Resource Locator"
+    ]
+  },
+  {
+    "question": "Apa bahan utama pembuatan cokelat?",
+    "correct_answer": "Biji Kakao",
+    "incorrect_answers": [
+      "Biji Kopi",
+      "Teh",
+      "Vanila"
+    ]
+  },
+  {
+    "question": "Apa itu 'Origami'?",
+    "correct_answer": "Seni melipat kertas dari Jepang",
+    "incorrect_answers": [
+      "Seni merangkai bunga dari Jepang",
+      "Seni menulis indah dari Jepang",
+      "Seni bela diri dari Jepang"
+    ]
+  },
+  {
+    "question": "Apa planet terjauh dari Matahari di Tata Surya kita?",
+    "correct_answer": "Neptunus",
+    "incorrect_answers": [
+      "Uranus",
+      "Saturnus",
+      "Jupiter"
+    ]
+  },
+  {
+    "question": "Apa nama satelit alami Bumi?",
+    "correct_answer": "Bulan",
+    "incorrect_answers": [
+      "Europa",
+      "Ganymede",
+      "Titan"
+    ]
+  },
+  {
+    "question": "Apa yang menjadi penyebab utama terjadinya pasang surut air laut?",
+    "correct_answer": "Gaya gravitasi Bulan",
+    "incorrect_answers": [
+      "Gaya gravitasi Matahari",
+      "Angin",
+      "Rotasi Bumi"
+    ]
+  },
+  {
+    "question": "Pada suhu berapakah air mendidih (Celcius) di permukaan laut?",
+    "correct_answer": "100°C",
+    "incorrect_answers": [
+      "90°C",
+      "110°C",
+      "0°C"
+    ]
+  },
+  {
+    "question": "Pada suhu berapakah air membeku (Celcius)?",
+    "correct_answer": "0°C",
+    "incorrect_answers": [
+      "10°C",
+      "-1°C",
+      "100°C"
+    ]
+  },
+  {
+    "question": "Siapakah kosmonot (astronaut) Rusia pertama yang pergi ke luar angkasa?",
+    "correct_answer": "Yuri Gagarin",
+    "incorrect_answers": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Alexey Leonov"
+    ]
+  },
+  {
+    "question": "Apa julukan umum untuk kota Yogyakarta?",
+    "correct_answer": "Kota Pelajar",
+    "incorrect_answers": [
+      "Kota Pahlawan",
+      "Kota Hujan",
+      "Kota Kembang"
+    ]
+  },
+  {
+    "question": "Apa julukan untuk kota Surabaya?",
+    "correct_answer": "Kota Pahlawan",
+    "incorrect_answers": [
+      "Kota Pelajar",
+      "Kota Hujan",
+      "Kota Kembang"
+    ]
+  },
+  {
+    "question": "Apa julukan untuk kota Bogor?",
+    "correct_answer": "Kota Hujan",
+    "incorrect_answers": [
+      "Kota Pelajar",
+      "Kota Pahlawan",
+      "Kota Kembang"
+    ]
+  },
+  {
+    "question": "Di pulau manakah Danau Toba, danau vulkanik terbesar di dunia, berada?",
+    "correct_answer": "Sumatra",
+    "incorrect_answers": [
+      "Jawa",
+      "Kalimantan",
+      "Sulawesi"
+    ]
+  },
+  {
+    "question": "Hewan endemik Indonesia yang merupakan kadal terbesar di dunia adalah...",
+    "correct_answer": "Komodo",
+    "incorrect_answers": [
+      "Orangutan",
+      "Badak Jawa",
+      "Anoa"
+    ]
+  },
+  {
+    "question": "Tarian terkenal dari Bali yang menceritakan kisah Ramayana dan dibawakan oleh banyak pria adalah...",
+    "correct_answer": "Tari Kecak",
+    "incorrect_answers": [
+      "Tari Saman",
+      "Tari Piring",
+      "Tari Jaipong"
+    ]
+  },
+  {
+    "question": "Tarian dari Aceh yang terkenal dengan gerakan tangan yang cepat dan serempak adalah...",
+    "correct_answer": "Tari Saman",
+    "incorrect_answers": [
+      "Tari Kecak",
+      "Tari Piring",
+      "Tari Jaipong"
+    ]
+  },
+  {
+    "question": "Siapakah Wakil Presiden pertama Republik Indonesia?",
+    "correct_answer": "Mohammad Hatta",
+    "incorrect_answers": [
+      "Soeharto",
+      "Adam Malik",
+      "Sri Sultan Hamengkubuwono IX"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Mesir?",
+    "correct_answer": "Kairo",
+    "incorrect_answers": [
+      "Alexandria",
+      "Luxor",
+      "Giza"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari India?",
+    "correct_answer": "New Delhi",
+    "incorrect_answers": [
+      "Mumbai",
+      "Kolkata",
+      "Bangalore"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Thailand?",
+    "correct_answer": "Bangkok",
+    "incorrect_answers": [
+      "Chiang Mai",
+      "Phuket",
+      "Pattaya"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Korea Selatan?",
+    "correct_answer": "Seoul",
+    "incorrect_answers": [
+      "Busan",
+      "Incheon",
+      "Pyongyang"
+    ]
+  },
+  {
+    "question": "Negara Eropa manakah yang terkenal berbentuk seperti sepatu bot?",
+    "correct_answer": "Italia",
+    "incorrect_answers": [
+      "Yunani",
+      "Swedia",
+      "Norwegia"
+    ]
+  },
+  {
+    "question": "Apa nama menara jam terkenal di London, yang secara teknis merujuk pada loncengnya?",
+    "correct_answer": "Big Ben",
+    "incorrect_answers": [
+      "Menara Eiffel",
+      "Menara Pisa",
+      "London Eye"
+    ]
+  },
+  {
+    "question": "Apa nama gedung opera terkenal dengan atap berbentuk layar di Sydney, Australia?",
+    "correct_answer": "Sydney Opera House",
+    "incorrect_answers": [
+      "Gedung Opera Wina",
+      "La Scala",
+      "Royal Opera House"
+    ]
+  },
+  {
+    "question": "Mata uang apa yang digunakan di Inggris Raya?",
+    "correct_answer": "Pound Sterling",
+    "incorrect_answers": [
+      "Euro",
+      "Dollar",
+      "Franc"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari NATO?",
+    "correct_answer": "North Atlantic Treaty Organization",
+    "incorrect_answers": [
+      "North American Treaty Organization",
+      "North Atlantic Trade Organization",
+      "New Atlantic Treaty Organization"
+    ]
+  },
+  {
+    "question": "Warna apa yang dihasilkan dari campuran warna merah dan kuning?",
+    "correct_answer": "Oranye (Jingga)",
+    "incorrect_answers": [
+      "Hijau",
+      "Ungu",
+      "Coklat"
+    ]
+  },
+  {
+    "question": "Warna apa yang dihasilkan dari campuran warna biru dan kuning?",
+    "correct_answer": "Hijau",
+    "incorrect_answers": [
+      "Oranye (Jingga)",
+      "Ungu",
+      "Coklat"
+    ]
+  },
+  {
+    "question": "Warna apa yang dihasilkan dari campuran warna merah dan biru?",
+    "correct_answer": "Ungu",
+    "incorrect_answers": [
+      "Hijau",
+      "Oranye (Jingga)",
+      "Coklat"
+    ]
+  },
+  {
+    "question": "Siapakah penulis trilogi novel 'The Lord of the Rings'?",
+    "correct_answer": "J.R.R. Tolkien",
+    "incorrect_answers": [
+      "J.K. Rowling",
+      "C.S. Lewis",
+      "George R.R. Martin"
+    ]
+  },
+  {
+    "question": "Berapa jumlah hati yang dimiliki oleh seekor gurita?",
+    "correct_answer": "3",
+    "incorrect_answers": [
+      "1",
+      "2",
+      "4"
+    ]
+  },
+  {
+    "question": "Apa nama bandara internasional utama yang melayani Jakarta?",
+    "correct_answer": "Soekarno-Hatta",
+    "incorrect_answers": [
+      "Juanda (Surabaya)",
+      "Ngurah Rai (Bali)",
+      "Kualanamu (Medan)"
+    ]
+  },
+  {
+    "question": "Apa itu 'K-Pop'?",
+    "correct_answer": "Musik Pop dari Korea",
+    "incorrect_answers": [
+      "Musik Pop dari Jepang",
+      "Musik Pop dari China",
+      "Musik Pop dari Kazakhstan"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Spanyol?",
+    "correct_answer": "Madrid",
+    "incorrect_answers": [
+      "Barcelona",
+      "Lisbon",
+      "Seville"
+    ]
+  },
+  {
+    "question": "Benua terkecil di dunia berdasarkan luas daratan adalah...",
+    "correct_answer": "Australia (Oseania)",
+    "incorrect_answers": [
+      "Eropa",
+      "Antartika",
+      "Amerika Selatan"
+    ]
+  },
+  {
+    "question": "Selat apakah yang memisahkan benua Asia dan Amerika Utara?",
+    "correct_answer": "Selat Bering",
+    "incorrect_answers": [
+      "Selat Malaka",
+      "Selat Gibraltar",
+      "Terusan Suez"
+    ]
+  },
+  {
+    "question": "Titik terdalam yang diketahui di lautan Bumi adalah...",
+    "correct_answer": "Palung Mariana",
+    "incorrect_answers": [
+      "Palung Sunda",
+      "Palung Tonga",
+      "Palung Puerto Riko"
+    ]
+  },
+  {
+    "question": "Danau terbesar di dunia berdasarkan luas permukaan adalah...",
+    "correct_answer": "Laut Kaspia",
+    "incorrect_answers": [
+      "Danau Superior",
+      "Danau Victoria",
+      "Danau Baikal"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Turki?",
+    "correct_answer": "Ankara",
+    "incorrect_answers": [
+      "Istanbul",
+      "Izmir",
+      "Antalya"
+    ]
+  },
+  {
+    "question": "Siapakah presiden Amerika Serikat selama Perang Saudara Amerika?",
+    "correct_answer": "Abraham Lincoln",
+    "incorrect_answers": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Theodore Roosevelt"
+    ]
+  },
+  {
+    "question": "Revolusi Industri dimulai di negara manakah?",
+    "correct_answer": "Inggris (Britania Raya)",
+    "incorrect_answers": [
+      "Perancis",
+      "Jerman",
+      "Amerika Serikat"
+    ]
+  },
+  {
+    "question": "Apa organ pernapasan utama pada manusia?",
+    "correct_answer": "Paru-paru",
+    "incorrect_answers": [
+      "Jantung",
+      "Hati",
+      "Ginjal"
+    ]
+  },
+  {
+    "question": "Apa planet terbesar di Tata Surya kita?",
+    "correct_answer": "Jupiter",
+    "incorrect_answers": [
+      "Saturnus",
+      "Neptunus",
+      "Bumi"
+    ]
+  },
+  {
+    "question": "Novel terkenal karya Pramoedya Ananta Toer yang pertama dari Tetralogi Buru adalah...",
+    "correct_answer": "Bumi Manusia",
+    "incorrect_answers": [
+      "Laskar Pelangi",
+      "Ronggeng Dukuh Paruk",
+      "Sang Pemimpi"
+    ]
+  },
+  {
+    "question": "Siapa penulis novel 'Don Quixote'?",
+    "correct_answer": "Miguel de Cervantes",
+    "incorrect_answers": [
+      "Fyodor Dostoevsky",
+      "Victor Hugo",
+      "Homer"
+    ]
+  },
+  {
+    "question": "Apa nama karakter utama (yang dimainkan pemain) dalam seri game 'The Legend of Zelda'?",
+    "correct_answer": "Link",
+    "incorrect_answers": [
+      "Zelda",
+      "Ganon",
+      "Mario"
+    ]
+  },
+  {
+    "question": "Apa nama piala yang diberikan kepada pemenang kejuaraan NBA (Basket)?",
+    "correct_answer": "Larry O'Brien Championship Trophy",
+    "incorrect_answers": [
+      "Stanley Cup (Hoki)",
+      "Vince Lombardi Trophy (American Football)",
+      "World Series Trophy (Bisbol)"
+    ]
+  },
+  {
+    "question": "Makanan khas Italia yang terdiri dari adonan bundar pipih dengan topping adalah...",
+    "correct_answer": "Pizza",
+    "incorrect_answers": [
+      "Sushi",
+      "Taco",
+      "Paella"
+    ]
+  },
+  {
+    "question": "Alat musik tradisional Sunda yang terbuat dari bambu dan dimainkan dengan cara digoyangkan adalah...",
+    "correct_answer": "Angklung",
+    "incorrect_answers": [
+      "Gamelan",
+      "Sasando",
+      "Kolintang"
+    ]
+  },
+  {
+    "question": "Berapa jumlah benua yang umumnya diakui (model 7 benua)?",
+    "correct_answer": "7",
+    "incorrect_answers": [
+      "5",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "question": "Apa nama galaksi tetangga besar terdekat dari Bima Sakti?",
+    "correct_answer": "Galaksi Andromeda",
+    "incorrect_answers": [
+      "Galaksi Triangulum",
+      "Galaksi Sombrero",
+      "Galaksi Whirlpool"
+    ]
+  },
+  {
+    "question": "Apa julukan untuk kota Bandung?",
+    "correct_answer": "Kota Kembang",
+    "incorrect_answers": [
+      "Kota Pelajar",
+      "Kota Hujan",
+      "Kota Pahlawan"
+    ]
+  },
+  {
+    "question": "Siapakah pemimpin spiritual Buddha Tibet yang saat ini dalam pengasingan?",
+    "correct_answer": "Dalai Lama",
+    "incorrect_answers": [
+      "Paus Fransiskus",
+      "Maha Guru",
+      "Konfusius"
+    ]
+  },
+  {
+    "question": "Berapa jumlah negara anggota Perserikatan Bangsa-Bangsa (PBB) saat ini (kira-kira)?",
+    "correct_answer": "193",
+    "incorrect_answers": [
+      "150",
+      "250",
+      "100"
+    ]
+  },
+  {
+    "question": "Makanan khas Jepang yang terdiri dari nasi yang dibentuk bersama lauk (biasanya ikan) disebut...",
+    "correct_answer": "Sushi",
+    "incorrect_answers": [
+      "Ramen",
+      "Tempura",
+      "Kimchi"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Jerman?",
+    "correct_answer": "Berlin",
+    "incorrect_answers": [
+      "Munich",
+      "Hamburg",
+      "Frankfurt"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Kanada?",
+    "correct_answer": "Ottawa",
+    "incorrect_answers": [
+      "Toronto",
+      "Vancouver",
+      "Montreal"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Brasil?",
+    "correct_answer": "Brasília",
+    "incorrect_answers": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Salvador"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Argentina?",
+    "correct_answer": "Buenos Aires",
+    "incorrect_answers": [
+      "Santiago",
+      "Lima",
+      "Bogotá"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Afrika Selatan?",
+    "correct_answer": "Pretoria (Eksekutif), Cape Town (Legislatif), Bloemfontein (Yudikatif)",
+    "incorrect_answers": [
+      "Johannesburg",
+      "Durban",
+      "Kairo"
+    ]
+  },
+  {
+    "question": "Apa itu 'Haka'?",
+    "correct_answer": "Tarian perang tradisional Suku Māori dari Selandia Baru",
+    "incorrect_answers": [
+      "Makanan khas Australia",
+      "Alat musik dari Hawaii",
+      "Gunung di Jepang"
+    ]
+  },
+  {
+    "question": "Apa sebutan untuk dokter spesialis jantung?",
+    "correct_answer": "Kardiolog",
+    "incorrect_answers": [
+      "Dermatolog (Kulit)",
+      "Neurolog (Saraf)",
+      "Pediatris (Anak)"
+    ]
+  },
+  {
+    "question": "Negara manakah yang tim nasional sepak bolanya dijuluki 'Azzurri'?",
+    "correct_answer": "Italia",
+    "incorrect_answers": [
+      "Spanyol",
+      "Perancis",
+      "Jerman"
+    ]
+  },
+  {
+    "question": "Apa lautan terkecil di dunia?",
+    "correct_answer": "Samudra Arktik",
+    "incorrect_answers": [
+      "Samudra Hindia",
+      "Samudra Atlantik",
+      "Samudra Pasifik"
+    ]
+  },
+  {
+    "question": "Berapa banyak zona waktu yang ada di Rusia (daratan)?",
+    "correct_answer": "11",
+    "incorrect_answers": [
+      "1",
+      "5",
+      "8"
+    ]
+  },
+  {
+    "question": "Pulau terbesar di dunia adalah...",
+    "correct_answer": "Greenland (Tanah Hijau)",
+    "incorrect_answers": [
+      "Australia",
+      "Kalimantan (Borneo)",
+      "Madagaskar"
+    ]
+  },
+  {
+    "question": "Gurun terluas di dunia (termasuk gurun kutub) adalah...",
+    "correct_answer": "Antartika",
+    "incorrect_answers": [
+      "Sahara",
+      "Gobi",
+      "Arktik"
+    ]
+  },
+  {
+    "question": "Selat apakah yang memisahkan Spanyol di Eropa dan Maroko di Afrika?",
+    "correct_answer": "Selat Gibraltar",
+    "incorrect_answers": [
+      "Selat Malaka",
+      "Selat Bering",
+      "Terusan Suez"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Vietnam?",
+    "correct_answer": "Hanoi",
+    "incorrect_answers": [
+      "Ho Chi Minh City",
+      "Da Nang",
+      "Bangkok"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari Filipina?",
+    "correct_answer": "Manila",
+    "incorrect_answers": [
+      "Cebu",
+      "Davao",
+      "Kuala Lumpur"
+    ]
+  },
+  {
+    "question": "Apa simbol kimia untuk unsur Perak?",
+    "correct_answer": "Ag",
+    "incorrect_answers": [
+      "Au (Emas)",
+      "Pb (Timah)",
+      "Fe (Besi)"
+    ]
+  },
+  {
+    "question": "Apa simbol kimia untuk unsur Natrium (Sodium)?",
+    "correct_answer": "Na",
+    "incorrect_answers": [
+      "N (Nitrogen)",
+      "S (Sulfur)",
+      "K (Kalium)"
+    ]
+  },
+  {
+    "question": "Apa yang diukur oleh skala pH?",
+    "correct_answer": "Tingkat keasaman atau kebasaan suatu larutan",
+    "incorrect_answers": [
+      "Kekuatan gempa bumi",
+      "Kecepatan angin",
+      "Tingkat kebisingan"
+    ]
+  },
+  {
+    "question": "Berapakah nilai pH yang dianggap netral?",
+    "correct_answer": "7",
+    "incorrect_answers": [
+      "0",
+      "1",
+      "14"
+    ]
+  },
+  {
+    "question": "Vitamin apakah yang terutama diproduksi oleh kulit saat terkena sinar matahari?",
+    "correct_answer": "Vitamin D",
+    "incorrect_answers": [
+      "Vitamin C",
+      "Vitamin A",
+      "Vitamin B12"
+    ]
+  },
+  {
+    "question": "Siapakah ilmuwan yang menemukan Penisilin?",
+    "correct_answer": "Alexander Fleming",
+    "incorrect_answers": [
+      "Marie Curie",
+      "Louis Pasteur",
+      "Albert Einstein"
+    ]
+  },
+  {
+    "question": "Apa organ terbesar pada tubuh manusia?",
+    "correct_answer": "Kulit",
+    "incorrect_answers": [
+      "Hati",
+      "Paru-paru",
+      "Usus"
+    ]
+  },
+  {
+    "question": "Apa gas rumah kaca yang paling banyak berkontribusi terhadap pemanasan global?",
+    "correct_answer": "Karbon Dioksida (CO2)",
+    "incorrect_answers": [
+      "Metana (CH4)",
+      "Nitrogen Oksida (N2O)",
+      "Oksigen (O2)"
+    ]
+  },
+  {
+    "question": "Siapakah Ratu terakhir Mesir Kuno dari Dinasti Ptolemaik?",
+    "correct_answer": "Cleopatra VII",
+    "incorrect_answers": [
+      "Nefertiti",
+      "Hatshepsut",
+      "Ramses II"
+    ]
+  },
+  {
+    "question": "Siapakah Presiden pertama Amerika Serikat?",
+    "correct_answer": "George Washington",
+    "incorrect_answers": [
+      "Abraham Lincoln",
+      "Thomas Jefferson",
+      "John Adams"
+    ]
+  },
+  {
+    "question": "Di kota manakah Archduke Franz Ferdinand dibunuh, yang memicu Perang Dunia I?",
+    "correct_answer": "Sarajevo",
+    "incorrect_answers": [
+      "Wina",
+      "Berlin",
+      "Beograd"
+    ]
+  },
+  {
+    "question": "Kapan manusia pertama kali mendarat di Bulan (Misi Apollo 11)?",
+    "correct_answer": "1969",
+    "incorrect_answers": [
+      "1961",
+      "1972",
+      "1957"
+    ]
+  },
+  {
+    "question": "Siapakah Perdana Menteri wanita pertama di Inggris (United Kingdom)?",
+    "correct_answer": "Margaret Thatcher",
+    "incorrect_answers": [
+      "Ratu Elizabeth II",
+      "Theresa May",
+      "Angela Merkel"
+    ]
+  },
+  {
+    "question": "Apa nama sistem segregasi rasial yang dilembagakan di Afrika Selatan?",
+    "correct_answer": "Apartheid",
+    "incorrect_answers": [
+      "Segregasi",
+      "Holocaust",
+      "Jim Crow"
+    ]
+  },
+  {
+    "question": "Siapakah aktivis anti-apartheid yang menjadi Presiden kulit hitam pertama Afrika Selatan?",
+    "correct_answer": "Nelson Mandela",
+    "incorrect_answers": [
+      "Desmond Tutu",
+      "F.W. de Klerk",
+      "Martin Luther King Jr."
+    ]
+  },
+  {
+    "question": "Siapakah seniman surealis Spanyol yang terkenal dengan lukisan 'The Persistence of Memory' (jam meleleh)?",
+    "correct_answer": "Salvador Dalí",
+    "incorrect_answers": [
+      "Pablo Picasso",
+      "Frida Kahlo",
+      "René Magritte"
+    ]
+  },
+  {
+    "question": "Siapakah filsuf Yunani Kuno yang merupakan guru dari Plato?",
+    "correct_answer": "Socrates",
+    "incorrect_answers": [
+      "Aristoteles",
+      "Pythagoras",
+      "Herodotus"
+    ]
+  },
+  {
+    "question": "Siapakah filsuf Yunani Kuno yang merupakan murid Plato dan guru dari Alexander Agung?",
+    "correct_answer": "Aristoteles",
+    "incorrect_answers": [
+      "Socrates",
+      "Plutarch",
+      "Diogenes"
+    ]
+  },
+  {
+    "question": "Siapakah penulis novel distopia '1984'?",
+    "correct_answer": "George Orwell",
+    "incorrect_answers": [
+      "Aldous Huxley",
+      "Ray Bradbury",
+      "J.R.R. Tolkien"
+    ]
+  },
+  {
+    "question": "Siapakah penulis novel epik Rusia 'War and Peace' (Perang dan Damai)?",
+    "correct_answer": "Leo Tolstoy",
+    "incorrect_answers": [
+      "Fyodor Dostoevsky",
+      "Anton Chekhov",
+      "Vladimir Nabokov"
+    ]
+  },
+  {
+    "question": "Apa nama makanan khas Spanyol yang bahan utamanya adalah nasi, safron, dan seringkali hidangan laut atau daging?",
+    "correct_answer": "Paella",
+    "incorrect_answers": [
+      "Risotto",
+      "Tapas",
+      "Nasi Goreng"
+    ]
+  },
+  {
+    "question": "Apa nama sup asam pedas terkenal yang berasal dari Thailand?",
+    "correct_answer": "Tom Yum (Tom Yam)",
+    "incorrect_answers": [
+      "Pho (Vietnam)",
+      "Ramen (Jepang)",
+      "Laksa (Malaysia/Singapura)"
+    ]
+  },
+  {
+    "question": "Siapakah pencipta utama di balik karakter video game 'Mario'?",
+    "correct_answer": "Shigeru Miyamoto",
+    "incorrect_answers": [
+      "Hideo Kojima",
+      "Satoru Iwata",
+      "Yuji Naka"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari 'GPS' dalam teknologi navigasi?",
+    "correct_answer": "Global Positioning System",
+    "incorrect_answers": [
+      "Global Pathfinding System",
+      "General Positioning Service",
+      "Geographic Placement System"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari akronim 'LASER'?",
+    "correct_answer": "Light Amplification by Stimulated Emission of Radiation",
+    "incorrect_answers": [
+      "Light Absorption by Stimulated Emission of Radiation",
+      "Laser Amplification by Stimulated Energy Rays",
+      "Light And Sound Energy Radiation"
+    ]
+  },
+  {
+    "question": "Film manakah yang memenangkan 'Best Picture' (Film Terbaik) pertama di Academy Awards (Oscar) (1927/1928)?",
+    "correct_answer": "Wings",
+    "incorrect_answers": [
+      "The Jazz Singer",
+      "Metropolis",
+      "Sunrise: A Song of Two Humans"
+    ]
+  },
+  {
+    "question": "Siapakah pemegang rekor dunia lari 100 meter putra saat ini?",
+    "correct_answer": "Usain Bolt",
+    "incorrect_answers": [
+      "Tyson Gay",
+      "Yohan Blake",
+      "Carl Lewis"
+    ]
+  },
+  {
+    "question": "Berapa jumlah pemain dalam satu tim bola basket yang berada di lapangan saat pertandingan?",
+    "correct_answer": "5",
+    "incorrect_answers": [
+      "6",
+      "7",
+      "11"
+    ]
+  },
+  {
+    "question": "Di negara bagian AS manakah 'Silicon Valley', pusat industri teknologi tinggi, berada?",
+    "correct_answer": "California",
+    "incorrect_answers": [
+      "New York",
+      "Texas",
+      "Washington"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari ASEAN?",
+    "correct_answer": "Association of Southeast Asian Nations",
+    "incorrect_answers": [
+      "Asian States Economic Alliance Network",
+      "Association of South Eurasian Allied Nations",
+      "Alliance of Southeast Asian Neighbors"
+    ]
+  },
+  {
+    "question": "Di kota manakah markas besar Perserikatan Bangsa-Bangsa (PBB) berada?",
+    "correct_answer": "New York City, AS",
+    "incorrect_answers": [
+      "Jenewa, Swiss",
+      "Wina, Austria",
+      "Den Haag, Belanda"
+    ]
+  },
+  {
+    "question": "Pada tanggal berapakah Sumpah Pemuda dicetuskan?",
+    "correct_answer": "28 Oktober 1928",
+    "incorrect_answers": [
+      "17 Agustus 1945",
+      "10 November 1945",
+      "2 Mei 1908"
+    ]
+  },
+  {
+    "question": "Siapakah yang mengetik naskah proklamasi kemerdekaan Republik Indonesia?",
+    "correct_answer": "Sayuti Melik",
+    "incorrect_answers": [
+      "Soekarno",
+      "Mohammad Hatta",
+      "Ahmad Soebardjo"
+    ]
+  },
+  {
+    "question": "Siapakah 'Bapak Pendidikan Nasional' Indonesia?",
+    "correct_answer": "Ki Hajar Dewantara",
+    "incorrect_answers": [
+      "Mohammad Hatta",
+      "R.A. Kartini",
+      "B.J. Habibie"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari provinsi Bali?",
+    "correct_answer": "Denpasar",
+    "incorrect_answers": [
+      "Kuta",
+      "Ubud",
+      "Singaraja"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari provinsi Jawa Timur?",
+    "correct_answer": "Surabaya",
+    "incorrect_answers": [
+      "Malang",
+      "Yogyakarta",
+      "Semarang"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari provinsi Sumatra Utara?",
+    "correct_answer": "Medan",
+    "incorrect_answers": [
+      "Padang",
+      "Palembang",
+      "Banda Aceh"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari provinsi Sulawesi Selatan?",
+    "correct_answer": "Makassar",
+    "incorrect_answers": [
+      "Manado",
+      "Palu",
+      "Kendari"
+    ]
+  },
+  {
+    "question": "Apa nama candi Hindu besar di Jawa Tengah yang didedikasikan untuk Trimurti (Siwa, Wisnu, Brahma)?",
+    "correct_answer": "Candi Prambanan",
+    "incorrect_answers": [
+      "Candi Borobudur",
+      "Candi Mendut",
+      "Candi Sewu"
+    ]
+  },
+  {
+    "question": "Apa nama kapal utama yang digunakan Christopher Columbus dalam pelayaran pertamanya ke Dunia Baru?",
+    "correct_answer": "Santa María",
+    "incorrect_answers": [
+      "Pinta",
+      "Niña",
+      "Mayflower"
+    ]
+  },
+  {
+    "question": "Siapa penulis buku 'Das Kapital' dan 'The Communist Manifesto' (bersama Engels)?",
+    "correct_answer": "Karl Marx",
+    "incorrect_answers": [
+      "Vladimir Lenin",
+      "Adam Smith",
+      "John Locke"
+    ]
+  },
+  {
+    "question": "Apa nama teater di London yang sangat terkait dengan William Shakespeare?",
+    "correct_answer": "Globe Theatre",
+    "incorrect_answers": [
+      "Royal Opera House",
+      "The Old Vic",
+      "West End"
+    ]
+  },
+  {
+    "question": "Dalam mitologi Yunani, siapakah dewi kebijaksanaan dan perang?",
+    "correct_answer": "Athena",
+    "incorrect_answers": [
+      "Hera",
+      "Aphrodite",
+      "Artemis"
+    ]
+  },
+  {
+    "question": "Dalam mitologi Romawi, siapakah padanan dari Zeus (dewa Yunani)?",
+    "correct_answer": "Jupiter",
+    "incorrect_answers": [
+      "Mars",
+      "Neptune",
+      "Pluto"
+    ]
+  },
+  {
+    "question": "Berapa kira-kira kecepatan cahaya di ruang hampa?",
+    "correct_answer": "300.000 km/detik",
+    "incorrect_answers": [
+      "150.000 km/detik",
+      "343 m/detik (kecepatan suara)",
+      "1.000.000 km/detik"
+    ]
   }
 ]
