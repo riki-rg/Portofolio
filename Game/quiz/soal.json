@@ -1,0 +1,587 @@
+[
+  {
+    "question": "Siapakah Presiden pertama Republik Indonesia?",
+    "correct_answer": "Soekarno",
+    "incorrect_answers": [
+      "Soeharto",
+      "B.J. Habibie",
+      "Joko Widodo"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari negara Jepang?",
+    "correct_answer": "Tokyo",
+    "incorrect_answers": [
+      "Kyoto",
+      "Osaka",
+      "Seoul"
+    ]
+  },
+  {
+    "question": "Pulau terbesar di Indonesia adalah...",
+    "correct_answer": "Kalimantan",
+    "incorrect_answers": [
+      "Sumatera",
+      "Jawa",
+      "Papua"
+    ]
+  },
+  {
+    "question": "Apa mata uang resmi negara Malaysia?",
+    "correct_answer": "Ringgit",
+    "incorrect_answers": [
+      "Rupiah",
+      "Baht",
+      "Dollar"
+    ]
+  },
+  {
+    "question": "Gunung tertinggi di dunia adalah...",
+    "correct_answer": "Gunung Everest",
+    "incorrect_answers": [
+      "Gunung K2",
+      "Gunung Jaya Wijaya",
+      "Gunung Fuji"
+    ]
+  },
+  {
+    "question": "Siapakah penemu bola lampu pijar?",
+    "correct_answer": "Thomas Alva Edison",
+    "incorrect_answers": [
+      "Albert Einstein",
+      "Alexander Graham Bell",
+      "Isaac Newton"
+    ]
+  },
+  {
+    "question": "Lagu kebangsaan Indonesia adalah...",
+    "correct_answer": "Indonesia Raya",
+    "incorrect_answers": [
+      "Padamu Negeri",
+      "Garuda Pancasila",
+      "Maju Tak Gentar"
+    ]
+  },
+  {
+    "question": "Formula kimia untuk air adalah...",
+    "correct_answer": "H2O",
+    "incorrect_answers": [
+      "CO2",
+      "O2",
+      "NaCl"
+    ]
+  },
+  {
+    "question": "Ada berapa provinsi di Indonesia saat ini (Tahun 2024)?",
+    "correct_answer": "38",
+    "incorrect_answers": [
+      "34",
+      "36",
+      "37"
+    ]
+  },
+  {
+    "question": "Planet terdekat dengan Matahari adalah...",
+    "correct_answer": "Merkurius",
+    "incorrect_answers": [
+      "Venus",
+      "Mars",
+      "Bumi"
+    ]
+  },
+  {
+    "question": "Candi Borobudur terletak di provinsi...",
+    "correct_answer": "Jawa Tengah",
+    "incorrect_answers": [
+      "Yogyakarta",
+      "Jawa Timur",
+      "Jawa Barat"
+    ]
+  },
+  {
+    "question": "Berapa hasil untuk 2 + 8 * 5?",
+    "correct_answer": "42",
+    "incorrect_answers": [
+      "50",
+      "45",
+      "40"
+    ]
+  },
+  {
+    "question": "Nama benua terbesar di dunia adalah...",
+    "correct_answer": "Asia",
+    "incorrect_answers": [
+      "Eropa",
+      "Australia",
+      "Amerika"
+    ]
+  },
+  {
+    "question": "Siapa manusia pertama yang pergi ke bulan?",
+    "correct_answer": "Neil Amstrong",
+    "incorrect_answers": [
+      "Boden Powell",
+      "Benjamin Franklin",
+      "Yuri Gargarin"
+    ]
+  },
+  {
+    "question": "Siapa Manusia pertama yang pergi ke luar angkasa?",
+    "correct_answer": "Yuri Garagarin",
+    "incorrect_answers": [
+      "Neil Amstrong",
+      "Benjamin Franklin",
+      "Boden Powell"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari negara Perancis?",
+    "correct_answer": "Paris",
+    "incorrect_answers": [
+      "London",
+      "Berlin",
+      "Roma"
+    ]
+  },
+  {
+    "question": "Siapakah pelukis lukisan 'Mona Lisa'?",
+    "correct_answer": "Leonardo da Vinci",
+    "incorrect_answers": [
+      "Michelangelo",
+      "Vincent van Gogh",
+      "Pablo Picasso"
+    ]
+  },
+  {
+    "question": "Sungai terpanjang di dunia adalah...",
+    "correct_answer": "Sungai Nil",
+    "incorrect_answers": [
+      "Sungai Amazon",
+      "Sungai Mississippi",
+      "Sungai Yangtze"
+    ]
+  },
+  {
+    "question": "Gunung tertinggi di dunia adalah...",
+    "correct_answer": "Gunung Everest",
+    "incorrect_answers": [
+      "Gunung K2",
+      "Gunung Kilimanjaro",
+      "Gunung Fuji"
+    ]
+  },
+  {
+    "question": "Planet manakah yang paling dekat dengan Matahari?",
+    "correct_answer": "Merkurius",
+    "incorrect_answers": [
+      "Venus",
+      "Mars",
+      "Bumi"
+    ]
+  },
+  {
+    "question": "Negara dengan populasi terbanyak di dunia (per 2024) adalah...",
+    "correct_answer": "India",
+    "incorrect_answers": [
+      "China",
+      "Amerika Serikat",
+      "Indonesia"
+    ]
+  },
+  {
+    "question": "Siapakah presiden pertama Indonesia?",
+    "correct_answer": "Soekarno",
+    "incorrect_answers": [
+      "Soeharto",
+      "Mohammad Hatta",
+      "B.J. Habibie"
+    ]
+  },
+  {
+    "question": "Apa rumus kimia untuk air?",
+    "correct_answer": "H2O",
+    "incorrect_answers": [
+      "CO2",
+      "O2",
+      "H2SO4"
+    ]
+  },
+  {
+    "question": "Benua terbesar di dunia adalah...",
+    "correct_answer": "Asia",
+    "incorrect_answers": [
+      "Afrika",
+      "Amerika Utara",
+      "Eropa"
+    ]
+  },
+  {
+    "question": "Kapan Perang Dunia II berakhir?",
+    "correct_answer": "1945",
+    "incorrect_answers": [
+      "1939",
+      "1918",
+      "1944"
+    ]
+  },
+  {
+    "question": "Siapakah penulis seri novel 'Harry Potter'?",
+    "correct_answer": "J.K. Rowling",
+    "incorrect_answers": [
+      "Stephen King",
+      "J.R.R. Tolkien",
+      "George R.R. Martin"
+    ]
+  },
+  {
+    "question": "Apa mata uang resmi negara Jepang?",
+    "correct_answer": "Yen",
+    "incorrect_answers": [
+      "Won",
+      "Yuan",
+      "Ringgit"
+    ]
+  },
+  {
+    "question": "Apa nama galaksi tempat Tata Surya kita berada?",
+    "correct_answer": "Bima Sakti (Milky Way)",
+    "incorrect_answers": [
+      "Andromeda",
+      "Triangulum",
+      "Galaksi Sombrero"
+    ]
+  },
+  {
+    "question": "Siapakah penemu teori relativitas umum?",
+    "correct_answer": "Albert Einstein",
+    "incorrect_answers": [
+      "Isaac Newton",
+      "Galileo Galilei",
+      "Marie Curie"
+    ]
+  },
+  {
+    "question": "Berapa jumlah planet resmi di Tata Surya kita?",
+    "correct_answer": "8",
+    "incorrect_answers": [
+      "9",
+      "7",
+      "10"
+    ]
+  },
+  {
+    "question": "Apa semboyan negara Indonesia?",
+    "correct_answer": "Bhinneka Tunggal Ika",
+    "incorrect_answers": [
+      "Garuda Pancasila",
+      "Tut Wuri Handayani",
+      "Merdeka atau Mati"
+    ]
+  },
+  {
+    "question": "Candi Buddha terbesar di dunia yang terletak di Indonesia adalah...",
+    "correct_answer": "Candi Borobudur",
+    "incorrect_answers": [
+      "Candi Prambanan",
+      "Angkor Wat",
+      "Candi Sewu"
+    ]
+  },
+  {
+    "question": "Hewan darat tercepat di dunia adalah...",
+    "correct_answer": "Cheetah",
+    "incorrect_answers": [
+      "Singa",
+      "Kuda",
+      "Pronghorn"
+    ]
+  },
+  {
+    "question": "Samudra terluas di dunia adalah...",
+    "correct_answer": "Samudra Pasifik",
+    "incorrect_answers": [
+      "Samudra Atlantik",
+      "Samudra Hindia",
+      "Samudra Arktik"
+    ]
+  },
+  {
+    "question": "Siapakah penulis naskah drama 'Hamlet'?",
+    "correct_answer": "William Shakespeare",
+    "incorrect_answers": [
+      "Charles Dickens",
+      "Leo Tolstoy",
+      "Homer"
+    ]
+  },
+  {
+    "question": "Apa bahasa resmi yang digunakan di negara Brasil?",
+    "correct_answer": "Portugis",
+    "incorrect_answers": [
+      "Spanyol",
+      "Inggris",
+      "Prancis"
+    ]
+  },
+  {
+    "question": "Apa kepanjangan dari 'WWW' dalam konteks internet?",
+    "correct_answer": "World Wide Web",
+    "incorrect_answers": [
+      "World Web Wide",
+      "Wide World Web",
+      "Web World Wide"
+    ]
+  },
+  {
+    "question": "Berapa jumlah sisi pada sebuah segi delapan (oktagon)?",
+    "correct_answer": "8",
+    "incorrect_answers": [
+      "6",
+      "7",
+      "9"
+    ]
+  },
+  {
+    "question": "Olimpiade Musim Panas diadakan setiap berapa tahun sekali?",
+    "correct_answer": "4 tahun",
+    "incorrect_answers": [
+      "2 tahun",
+      "3 tahun",
+      "5 tahun"
+    ]
+  },
+  {
+    "question": "Unsur kimia apakah yang memiliki simbol 'Au'?",
+    "correct_answer": "Emas",
+    "incorrect_answers": [
+      "Perak (Ag)",
+      "Besi (Fe)",
+      "Argon (Ar)"
+    ]
+  },
+  {
+    "question": "Siapa pendiri utama perusahaan Microsoft?",
+    "correct_answer": "Bill Gates",
+    "incorrect_answers": [
+      "Steve Jobs",
+      "Jeff Bezos",
+      "Mark Zuckerberg"
+    ]
+  },
+  {
+    "question": "Pulau terpadat penduduknya di Indonesia adalah...",
+    "correct_answer": "Jawa",
+    "incorrect_answers": [
+      "Sumatra",
+      "Kalimantan",
+      "Sulawesi"
+    ]
+  },
+  {
+    "question": "Tembok Besar China dibangun untuk melindungi dari serangan siapa?",
+    "correct_answer": "Bangsa Mongol (dan nomaden utara lainnya)",
+    "incorrect_answers": [
+      "Bangsa Jepang",
+      "Bangsa Korea",
+      "Bangsa India"
+    ]
+  },
+  {
+    "question": "Gurun pasir panas terbesar di dunia adalah...",
+    "correct_answer": "Gurun Sahara",
+    "incorrect_answers": [
+      "Gurun Gobi",
+      "Gurun Kalahari",
+      "Gurun Atacama"
+    ]
+  },
+  {
+    "question": "Siapakah seniman yang melukis 'The Starry Night' (Malam Berbintang)?",
+    "correct_answer": "Vincent van Gogh",
+    "incorrect_answers": [
+      "Claude Monet",
+      "Pablo Picasso",
+      "Salvador Dalí"
+    ]
+  },
+  {
+    "question": "Apa nama ibukota Australia?",
+    "correct_answer": "Canberra",
+    "incorrect_answers": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ]
+  },
+  {
+    "question": "Berapa jumlah pemain dalam satu tim sepak bola yang bermain di lapangan?",
+    "correct_answer": "11",
+    "incorrect_answers": [
+      "10",
+      "12",
+      "9"
+    ]
+  },
+  {
+    "question": "Proses tumbuhan membuat makanannya sendiri disebut...",
+    "correct_answer": "Fotosintesis",
+    "incorrect_answers": [
+      "Respirasi",
+      "Transpirasi",
+      "Osmosis"
+    ]
+  },
+  {
+    "question": "Kapan Tembok Berlin runtuh?",
+    "correct_answer": "1989",
+    "incorrect_answers": [
+      "1991",
+      "1985",
+      "1961"
+    ]
+  },
+  {
+    "question": "Negara manakah yang dikenal sebagai 'Negeri Kincir Angin'?",
+    "correct_answer": "Belanda",
+    "incorrect_answers": [
+      "Denmark",
+      "Jerman",
+      "Belgia"
+    ]
+  },
+  {
+    "question": "Apa satuan SI (Sistem Internasional) untuk mengukur gaya?",
+    "correct_answer": "Newton (N)",
+    "incorrect_answers": [
+      "Joule (J)",
+      "Watt (W)",
+      "Pascal (Pa)"
+    ]
+  },
+  {
+    "question": "Siapakah orang pertama yang mendarat di Bulan?",
+    "correct_answer": "Neil Armstrong",
+    "incorrect_answers": [
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "Michael Collins"
+    ]
+  },
+  {
+    "question": "Lagu kebangsaan Indonesia adalah...",
+    "correct_answer": "Indonesia Raya",
+    "incorrect_answers": [
+      "Maju Tak Gentar",
+      "Garuda Pancasila",
+      "Hari Merdeka"
+    ]
+  },
+  {
+    "question": "Apa nama patung ikonik di Rio de Janeiro, Brasil?",
+    "correct_answer": "Christ the Redeemer (Kristus Penebus)",
+    "incorrect_answers": [
+      "Patung Liberty",
+      "Patung David",
+      "The Thinker"
+    ]
+  },
+  {
+    "question": "Berapa jumlah hari dalam setahun (bukan tahun kabisat)?",
+    "correct_answer": "365",
+    "incorrect_answers": [
+      "366",
+      "360",
+      "364"
+    ]
+  },
+  {
+    "question": "Unsur kimia apakah yang paling melimpah di alam semesta?",
+    "correct_answer": "Hidrogen",
+    "incorrect_answers": [
+      "Helium",
+      "Oksigen",
+      "Karbon"
+    ]
+  },
+  {
+    "question": "Siapakah dewa petir dalam mitologi Yunani Kuno?",
+    "correct_answer": "Zeus",
+    "incorrect_answers": [
+      "Poseidon",
+      "Hades",
+      "Apollo"
+    ]
+  },
+  {
+    "question": "Negara manakah yang memiliki garis pantai terpanjang di dunia?",
+    "correct_answer": "Kanada",
+    "incorrect_answers": [
+      "Indonesia",
+      "Rusia",
+      "Australia"
+    ]
+  },
+  {
+    "question": "Apa nama perusahaan yang didirikan oleh Steve Jobs, Steve Wozniak, dan Ronald Wayne?",
+    "correct_answer": "Apple",
+    "incorrect_answers": [
+      "Microsoft",
+      "Google",
+      "Amazon"
+    ]
+  },
+  {
+    "question": "Berapa jumlah huruf dalam abjad Latin (Inggris/Indonesia)?",
+    "correct_answer": "26",
+    "incorrect_answers": [
+      "24",
+      "28",
+      "30"
+    ]
+  },
+  {
+    "question": "Siapakah komposer dari 'Für Elise'?",
+    "correct_answer": "Ludwig van Beethoven",
+    "incorrect_answers": [
+      "Wolfgang Amadeus Mozart",
+      "Johann Sebastian Bach",
+      "Frédéric Chopin"
+    ]
+  },
+  {
+    "question": "Apa warna bendera Jepang?",
+    "correct_answer": "Putih dengan lingkaran merah di tengah",
+    "incorrect_answers": [
+      "Merah dengan lingkaran putih di tengah",
+      "Putih dan biru",
+      "Merah dan kuning"
+    ]
+  },
+  {
+    "question": "Apa ibukota dari negara Rusia?",
+    "correct_answer": "Moskow",
+    "incorrect_answers": [
+      "Saint Petersburg",
+      "Kyiv",
+      "Vladivostok"
+    ]
+  },
+  {
+    "question": "Mamalia terbesar di dunia adalah...",
+    "correct_answer": "Paus Biru (Blue Whale)",
+    "incorrect_answers": [
+      "Gajah Afrika",
+      "Jerapah",
+      "Hiu Paus"
+    ]
+  },
+  {
+    "question": "Siapa yang menulis buku 'On the Origin of Species' (Asal Usul Spesies)?",
+    "correct_answer": "Charles Darwin",
+    "incorrect_answers": [
+      "Gregor Mendel",
+      "Alfred Russel Wallace",
+      "Louis Pasteur"
+    ]
+  }
+]

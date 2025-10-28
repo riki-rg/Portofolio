@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis - RMH GAMES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-arcade: #0D0221;
+            --neon-magenta: #FF00FF;
+            --neon-cyan: #00FFFF;
+            --text-arcade: #F0F0F0;
+            --card-arcade-bg: rgba(40, 20, 80, 0.8);
+            --correct-color: #28a745;
+            --incorrect-color: #dc3545;
+        }
+
+        body {
+            background-color: var(--bg-arcade);
+            color: var(--text-arcade);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-arcade-bg);
+            border: 2px solid var(--neon-magenta);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--neon-magenta);
+            font-size: 1.5rem;
+            z-index: 100;
+            box-shadow: 0 0 15px var(--neon-magenta);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: var(--neon-magenta);
+            color: var(--bg-arcade);
+        }
+
+        .quiz-container {
+            background-color: var(--card-arcade-bg);
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 700px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quiz-container h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--neon-cyan);
+            text-align: center;
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        #info-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            color: var(--neon-magenta);
+        }
+
+        #question-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            min-height: 60px;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: transparent;
+            border: 2px solid var(--neon-magenta);
+            color: var(--neon-magenta);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover:not(:disabled) {
+            background-color: var(--neon-magenta);
+            color: var(--bg-arcade);
+        }
+
+        .btn.correct {
+            background-color: var(--correct-color);
+            border-color: var(--correct-color);
+            color: white;
+        }
+        .btn.incorrect {
+            background-color: var(--incorrect-color);
+            border-color: var(--incorrect-color);
+            color: white;
+        }
+        .btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .next-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            background-color: var(--neon-cyan);
+            color: var(--bg-arcade);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 2rem;
+            transition: transform 0.2s ease;
+        }
+        .next-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <a onclick="history.back()" class="back-button" title="Kembali">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="quiz-container" id="quiz-container">
+        <h1>KUIZ PENGETAHUAN UMUM</h1>
+        
+        <div id="loading">
+            <p>Memuat soal...</p>
+        </div>
+
+        <div id="quiz-content" class="hidden">
+            <div id="info-container">
+                <span id="question-counter">Soal 1 dari 10</span>
+                <span id="score-text">Skor: 0</span>
+            </div>
+            
+            <h2 id="question-text">Ini adalah placeholder untuk pertanyaan...</h2>
+            
+            <div id="answer-buttons" class="btn-grid">
+                </div>
+            
+            <button id="next-btn" class="next-btn hidden">Lanjut</button>
+        </div>
+
+        <div id="result-container" class="hidden">
+            <h2 id="result-text">Skor Akhir Anda: 0 / 10</h2>
+            <button id="play-again-btn" class="next-btn">Main Lagi</button>
+        </div>
+    </div>
+
+    <script src="kuiz.js"></script>
+</body>
+</html>
