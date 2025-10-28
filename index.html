@@ -49,6 +49,30 @@
             font-weight: 700;
         }
 
+        #typed-text {
+            color: var(--accent-color);
+            font-weight: bold;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 2px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: var(--accent-color);
+            margin-left: 8px;
+            animation: blink 0.7s infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .intro-text { font-size: 1.8rem; }
+        }
         p {
             font-size: 1.1rem;
             color: #9CA3AF;
@@ -101,14 +125,60 @@
 
     <div class="splash-container">
         <img src="Assets/Rizqy2.jpg" alt="Foto Profil" class="profile-photo animate-item">
-        <h1 class="animate-item">Halo, saya Rizqy Maulana hakim</h1>
-        <p class="animate-item">Saya seorang Web Developer & UI/UX Enthusiast.</p>
+    <h1 class="animate-item">Halo, saya Rizqy Maulana hakim</h1>
+    <h1 class="animate-item">
+        Saya seorang <span id="typed-text"></span><span class="cursor">&nbsp;</span>
+    </h1>
         <a href="portofolio.html" class="cta-button animate-item">Lihat Portofolio Saya</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Animasi
+        const typedTextSpan = document.getElementById("typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+
+        const phrases = ["Web Developer", "UI/UX Enthusiast", "Tech Explorer", "Mahasiswa"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 120; // Kecepatan mengetik
+        const deletingSpeed = 60; // Kecepatan menghapus
+        const pauseDuration = 1500;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            let textToDisplay = "";
+
+            if (isDeleting) {
+                textToDisplay = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textToDisplay = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            typedTextSpan.textContent = textToDisplay;
+
+            let timeoutDuration = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+
+                timeoutDuration = pauseDuration;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+
+                timeoutDuration = pauseDuration / 2;
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+            
+            setTimeout(type, timeoutDuration);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (phrases.length > 0) setTimeout(type, pauseDuration / 7); // Jeda awal sebelum mulai
+        });
+        // Animasi Munggah
         gsap.from(".animate-item", {
             duration: 1,
             y: 30,
