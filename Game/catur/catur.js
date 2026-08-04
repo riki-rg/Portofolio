@@ -66,10 +66,18 @@ promotionPieces.forEach(piece => {
         if (promotionPending) {
             const newPiece = promotionPending.isWhite ? piece.dataset.piece : piece.dataset.piece.toUpperCase();
             board[promotionPending.row][promotionPending.col] = newPiece;
+            
+            const wasWhite = promotionPending.isWhite;
             promotionPending = null;
             promotionModal.classList.add('hidden');
+            
+            // Now complete the move: switch player and update status
+            currentPlayer = wasWhite ? 'black' : 'white';
+            updateStatus();
+            checkGameOver();
             renderBoard();
             
+            // If it's now AI's turn, let AI move
             if (!isGameOver && currentPlayer === 'black') {
                 setTimeout(() => aiMove(), 500);
             }
@@ -453,9 +461,16 @@ function makeMove(fromRow, fromCol, toRow, toCol, moveData = {}) {
     
     // Check for pawn promotion
     if (piece.toLowerCase() === 'p' && (toRow === 0 || toRow === 7)) {
+        // Record move first
+        lastMove = { from: { row: fromRow, col: fromCol }, to: { row: toRow, col: toCol } };
+        const notation = `${PIECES[piece]} ${String.fromCharCode(97 + fromCol)}${8 - fromRow} → ${String.fromCharCode(97 + toCol)}${8 - toRow} (Promosi)`;
+        moveHistory.push(notation);
+        updateMoveHistory();
+        
+        // Set promotion pending (but DON'T switch player yet)
         promotionPending = { row: toRow, col: toCol, isWhite: isWhite };
         promotionModal.classList.remove('hidden');
-        return; // Don't switch player yet
+        return; // Wait for promotion choice
     }
     
     // Record move
