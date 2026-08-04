@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Rizqy Maulana Hakim - Lihat proyek, keahlian, dan pengalaman saya dalam UI/UX Design dan Web Development">
+    <meta property="og:title" content="Portfolio Rizqy Maulana Hakim">
+    <meta property="og:description" content="UI/UX Designer & Web Developer - Mahasiswa UMKU">
+    <meta property="og:type" content="website">
     <title>Portofolio Rizqy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -233,7 +237,7 @@
                     <p>UI/UX Designer & Web Developer</p>
                 </div>
             </div>
-            <p class="profil-bio">Selamat datang di situs saya! Saya Rizqy Maulana Hakim, adalah seorang ui/UX Designer & Web Developer yang masih menempuh pendidikan di Unversitas Muhammadiyah Kudus(UMKU). Jika igin melihat saya lebih lanjut bisa di click ya chart nya.</p>
+            <p class="profil-bio">Selamat datang di situs saya! Saya Rizqy Maulana Hakim, adalah seorang UI/UX Designer & Web Developer yang masih menempuh pendidikan di Universitas Muhammadiyah Kudus (UMKU). Jika ingin melihat saya lebih lanjut bisa diklik ya kartunya.</p>
             <a href="tentang-saya.html" class="bento-link" aria-label="Lihat profil lengkap"></a>
         </div>
         <div class="bento-item item-tech" id="teknologi">
@@ -316,7 +320,7 @@
         
         // Efek Partikel bg
         const particleSymbols = ['1', '0', '{}', '<>', '/>', '()', '=>', ';', '#', '&', '*', '+', '-', '='];
-        const particleColors = ["#38EBC0", "#3C64E6", "#05F709", "#F7F305", "FAFFOO"];
+        const particleColors = ["#38EBC0", "#3C64E6", "#05F709", "#F7F305", "#FAFFOO"];
         const mouse = { x: 0, y: 0 };
         window.addEventListener("mousemove", (event) => { mouse.x = event.clientX; mouse.y = event.clientY; });
 
@@ -335,7 +339,7 @@
 
             gsap.to(particle, {
                 duration: gsap.utils.random(0.8, 1.8),
-                x: '+=gsap.utils.random(-80, 80)', y: '+=gsap.utils.random(-80, 80)',
+                x: `+=${gsap.utils.random(-80, 80)}`, y: `+=${gsap.utils.random(-80, 80)}`,
                 opacity: 0, scale: 0.5, rotation: gsap.utils.random(-360, 360),
                 ease: "power2.out", onComplete: () => { particle.remove(); }
             });
