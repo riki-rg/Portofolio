@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game Catur - RMH Games">
+    <meta property="og:title" content="Game Catur - RMH Games">
+    <meta property="og:description" content="Mainkan catur melawan AI dengan algoritma minimax!">
+    <meta property="og:type" content="website">
+    <title>Catur - RMH GAMES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-arcade: #0D0221;
+            --grid-color: rgba(0, 255, 255, 0.1);
+            --neon-cyan: #00FFFF;
+            --neon-magenta: #FF00FF;
+            --neon-yellow: #FFFF00;
+            --neon-green: #00FF00;
+            --text-arcade: #F0F0F0;
+            --card-arcade-bg: rgba(40, 20, 80, 0.8);
+            --light-square: #F0D9B5;
+            --dark-square: #B58863;
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-arcade);
+            color: var(--text-arcade);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+            box-sizing: border-box;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px), 
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-arcade-bg);
+            border: 2px solid var(--neon-magenta);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--neon-magenta);
+            font-size: 1.5rem;
+            z-index: 100;
+            box-shadow: 0 0 15px var(--neon-magenta);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: var(--neon-magenta);
+            color: var(--bg-arcade);
+            transform: scale(1.1) rotate(-15deg);
+        }
+
+        .game-container {
+            background-color: var(--card-arcade-bg);
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--neon-cyan);
+            text-align: center;
+            margin: 0 0 1.5rem 0;
+            font-size: 2rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        #game-status {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            color: var(--neon-yellow);
+            margin-bottom: 1rem;
+            text-align: center;
+            min-height: 30px;
+        }
+
+        #game-status.check {
+            color: var(--neon-magenta);
+            animation: blink 0.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        #board-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #chessboard {
+            border: 3px solid var(--neon-magenta);
+            box-shadow: 0 0 20px var(--neon-magenta);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .square.light {
+            background-color: var(--light-square);
+        }
+
+        .square.dark {
+            background-color: var(--dark-square);
+        }
+
+        .square.selected {
+            background-color: var(--neon-yellow) !important;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .square.legal-move::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: rgba(0, 255, 0, 0.6);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .square.last-move {
+            background-color: rgba(0, 255, 255, 0.3) !important;
+        }
+
+        .square.check {
+            background-color: rgba(255, 0, 0, 0.5) !important;
+        }
+
+        .square:hover {
+            filter: brightness(1.1);
+        }
+
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 200px;
+        }
+
+        .info-panel {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .info-panel h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--neon-cyan);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .captured-pieces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            font-size: 20px;
+        }
+
+        #move-history {
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 0.75rem;
+            color: var(--text-arcade);
+        }
+
+        #move-history::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        #move-history::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        #move-history::-webkit-scrollbar-thumb {
+            background: var(--neon-cyan);
+            border-radius: 5px;
+        }
+
+        #ai-thinking {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--neon-magenta);
+            text-align: center;
+            margin-top: 1rem;
+            animation: blink 1s infinite;
+        }
+
+        #game-over {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #game-over h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--neon-green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        #restart-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            background-color: var(--neon-cyan);
+            color: var(--bg-arcade);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        #restart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            #chessboard {
+                grid-template-columns: repeat(8, 40px);
+                grid-template-rows: repeat(8, 40px);
+            }
+            .square {
+                width: 40px;
+                height: 40px;
+                font-size: 28px;
+            }
+            .back-button { top: 1rem; right: 1rem; width: 45px; height: 45px; }
+            #board-container { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../games.html" class="back-button" title="Kembali">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="game-container">
+        <h1>CATUR</h1>
+        
+        <div id="game-status">Giliran Anda (Putih)</div>
+
+        <div id="board-container">
+            <div id="chessboard"></div>
+            
+            <div id="sidebar">
+                <div class="info-panel">
+                    <h3>DIMAKAN</h3>
+                    <div id="captured-white" class="captured-pieces"></div>
+                    <div id="captured-black" class="captured-pieces"></div>
+                </div>
+                
+                <div class="info-panel">
+                    <h3>RIWAYAT</h3>
+                    <div id="move-history"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ai-thinking" class="hidden">AI BERPIKIR...</div>
+
+        <div id="game-over" class="hidden">
+            <h2 id="result-title"></h2>
+            <button id="restart-btn">Main Lagi</button>
+        </div>
+    </div>
+
+    <script src="catur.js"></script>
+</body>
+</html>

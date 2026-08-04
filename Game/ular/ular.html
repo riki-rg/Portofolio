@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game Ular (Snake) - RMH Games">
+    <meta property="og:title" content="Game Ular - RMH Games">
+    <meta property="og:description" content="Mainkan game klasik Snake dengan kontrol smooth dan visual neon arcade">
+    <meta property="og:type" content="website">
+    <title>Game Ular - RMH GAMES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-arcade: #0D0221;
+            --grid-color: rgba(0, 255, 255, 0.1);
+            --neon-cyan: #00FFFF;
+            --neon-magenta: #FF00FF;
+            --neon-yellow: #FFFF00;
+            --neon-green: #00FF00;
+            --text-arcade: #F0F0F0;
+            --card-arcade-bg: rgba(40, 20, 80, 0.8);
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-arcade);
+            color: var(--text-arcade);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+            box-sizing: border-box;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px), 
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-arcade-bg);
+            border: 2px solid var(--neon-magenta);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--neon-magenta);
+            font-size: 1.5rem;
+            z-index: 100;
+            box-shadow: 0 0 15px var(--neon-magenta);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: var(--neon-magenta);
+            color: var(--bg-arcade);
+            transform: scale(1.1) rotate(-15deg);
+        }
+
+        .game-container {
+            background-color: var(--card-arcade-bg);
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--neon-cyan);
+            text-align: center;
+            margin: 0 0 1.5rem 0;
+            font-size: 2rem;
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        #game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 1rem;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+        }
+
+        #score {
+            color: var(--neon-green);
+        }
+
+        #highscore {
+            color: var(--neon-yellow);
+        }
+
+        #gameCanvas {
+            border: 2px solid var(--neon-magenta);
+            box-shadow: 0 0 15px var(--neon-magenta);
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #controls {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            grid-template-rows: repeat(2, 60px);
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .control-btn {
+            background-color: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            border-radius: 8px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .control-btn:hover {
+            background-color: var(--neon-cyan);
+            color: var(--bg-arcade);
+        }
+
+        .control-btn:active {
+            transform: scale(0.95);
+        }
+
+        #up-btn { grid-column: 2; grid-row: 1; }
+        #left-btn { grid-column: 1; grid-row: 2; }
+        #down-btn { grid-column: 2; grid-row: 2; }
+        #right-btn { grid-column: 3; grid-row: 2; }
+
+        #game-over {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #game-over h2 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--neon-magenta);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-magenta);
+        }
+
+        #final-score {
+            font-size: 1.2rem;
+            color: var(--text-arcade);
+            margin-bottom: 1.5rem;
+        }
+
+        #restart-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            background-color: var(--neon-cyan);
+            color: var(--bg-arcade);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        #restart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #pause-info {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--text-arcade);
+            margin-top: 1rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+            #game-info { font-size: 0.7rem; }
+            #gameCanvas { max-width: 100%; height: auto; }
+            .back-button { top: 1rem; right: 1rem; width: 45px; height: 45px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../games.html" class="back-button" title="Kembali">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="game-container">
+        <h1>GAME ULAR</h1>
+        
+        <div id="game-info">
+            <span id="score">Skor: 0</span>
+            <span id="highscore">High: 0</span>
+        </div>
+
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div id="controls">
+            <button class="control-btn" id="up-btn"><i class="fa-solid fa-arrow-up"></i></button>
+            <button class="control-btn" id="left-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="control-btn" id="down-btn"><i class="fa-solid fa-arrow-down"></i></button>
+            <button class="control-btn" id="right-btn"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <p id="pause-info">Tekan P untuk Pause</p>
+
+        <div id="game-over" class="hidden">
+            <h2>GAME OVER</h2>
+            <p id="final-score"></p>
+            <button id="restart-btn">Main Lagi</button>
+        </div>
+    </div>
+
+    <script src="ular.js"></script>
+</body>
+</html>
