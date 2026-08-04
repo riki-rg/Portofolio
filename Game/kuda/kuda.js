@@ -14,6 +14,14 @@ let gameStarted = false;
 let gameOver = false;
 let startTime = 0;
 let animationId = null;
+let difficulty = 'medium'; // easy, medium, hard
+
+// Difficulty settings
+const DIFFICULTY_SETTINGS = {
+    easy: { minSpeed: 1, maxSpeed: 3, boostChance: 0.05, boostAmount: 5 },
+    medium: { minSpeed: 2, maxSpeed: 6, boostChance: 0.1, boostAmount: 10 },
+    hard: { minSpeed: 4, maxSpeed: 8, boostChance: 0.15, boostAmount: 15 }
+};
 
 // DOM elements
 const clicksElement = document.getElementById('clicks');
@@ -24,6 +32,18 @@ const gameOverDiv = document.getElementById('game-over');
 const resultTitleElement = document.getElementById('result-title');
 const finalStatsElement = document.getElementById('final-stats');
 const restartBtn = document.getElementById('restart-btn');
+const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+
+// Difficulty selector
+difficultyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (gameStarted) return; // Can't change during race
+        
+        difficulty = btn.dataset.difficulty;
+        difficultyBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
 
 // Initialize horses
 function initHorses() {
@@ -166,19 +186,21 @@ function drawConfetti() {
 
 // Update AI horses
 function updateAI() {
+    const settings = DIFFICULTY_SETTINGS[difficulty];
+    
     for (let i = 1; i < horses.length; i++) {
         const horse = horses[i];
         
-        // Base speed with random variation
-        const baseSpeed = 2 + Math.random() * 4;
+        // Base speed with random variation based on difficulty
+        const baseSpeed = settings.minSpeed + Math.random() * (settings.maxSpeed - settings.minSpeed);
         horse.position += baseSpeed;
         
-        // Random boost (10% chance)
-        if (Math.random() < 0.1) {
-            horse.position += 10;
+        // Random boost (chance based on difficulty)
+        if (Math.random() < settings.boostChance) {
+            horse.position += settings.boostAmount;
         }
         
-        // Random slow down (5% chance)
+        // Random slow down (5% chance - same for all difficulties)
         if (Math.random() < 0.05) {
             horse.position -= 5;
         }

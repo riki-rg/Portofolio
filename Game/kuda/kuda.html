@@ -89,6 +89,35 @@
             text-shadow: 0 0 10px var(--neon-cyan);
         }
 
+        #difficulty-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.65rem;
+            background-color: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .difficulty-btn:hover {
+            background-color: var(--neon-cyan);
+            color: var(--bg-arcade);
+        }
+
+        .difficulty-btn.active {
+            background-color: var(--neon-magenta);
+            border-color: var(--neon-magenta);
+            color: var(--text-arcade);
+        }
+
         #game-info {
             display: flex;
             justify-content: space-around;
@@ -205,6 +234,12 @@
 
     <div class="game-container">
         <h1>BALAPAN KUDA</h1>
+        
+        <div id="difficulty-selector">
+            <button class="difficulty-btn" data-difficulty="easy">EASY</button>
+            <button class="difficulty-btn active" data-difficulty="medium">MEDIUM</button>
+            <button class="difficulty-btn" data-difficulty="hard">HARD</button>
+        </div>
         
         <div id="game-info">
             <span id="clicks">Klik: 0</span>

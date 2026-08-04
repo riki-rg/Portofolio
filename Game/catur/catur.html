@@ -86,9 +86,38 @@
             font-family: 'Press Start 2P', cursive;
             color: var(--neon-cyan);
             text-align: center;
-            margin: 0 0 1.5rem 0;
+            margin: 0 0 1rem 0;
             font-size: 2rem;
             text-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        #difficulty-selector {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .difficulty-btn {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            background-color: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .difficulty-btn:hover {
+            background-color: var(--neon-cyan);
+            color: var(--bg-arcade);
+        }
+
+        .difficulty-btn.active {
+            background-color: var(--neon-magenta);
+            border-color: var(--neon-magenta);
+            color: var(--text-arcade);
         }
 
         #game-status {
@@ -146,6 +175,29 @@
 
         .square.dark {
             background-color: var(--dark-square);
+        }
+
+        /* Bidak putih dengan text-shadow putih */
+        .square .white-piece {
+            color: #FFFFFF;
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000,
+                0 0 5px #FFFFFF;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        /* Bidak hitam dengan warna hitam solid */
+        .square .black-piece {
+            color: #1a1a1a;
+            text-shadow: 
+                -0.5px -0.5px 0 #666,  
+                0.5px -0.5px 0 #666,
+                -0.5px 0.5px 0 #666,
+                0.5px 0.5px 0 #666;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
         }
 
         .square.selected {
@@ -265,6 +317,61 @@
             display: none;
         }
 
+        /* Pawn Promotion Modal */
+        #promotion-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .promotion-content {
+            background-color: var(--card-arcade-bg);
+            border: 3px solid var(--neon-cyan);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 0 30px var(--neon-cyan);
+        }
+
+        .promotion-content h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--neon-cyan);
+            font-size: 1rem;
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+        }
+
+        .promotion-choices {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .promotion-piece {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-square);
+            border: 3px solid var(--dark-square);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .promotion-piece:hover {
+            transform: scale(1.1);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan);
+        }
+
         @media (max-width: 768px) {
             body { padding: 1rem; }
             h1 { font-size: 1.5rem; }
@@ -290,6 +397,13 @@
     <div class="game-container">
         <h1>CATUR</h1>
         
+        <div id="difficulty-selector">
+            <button class="difficulty-btn" data-difficulty="easy">EASY</button>
+            <button class="difficulty-btn" data-difficulty="medium">MEDIUM</button>
+            <button class="difficulty-btn active" data-difficulty="hard">HARD</button>
+            <button class="difficulty-btn" data-difficulty="insane">INSANE</button>
+        </div>
+        
         <div id="game-status">Giliran Anda (Putih)</div>
 
         <div id="board-container">
@@ -314,6 +428,19 @@
         <div id="game-over" class="hidden">
             <h2 id="result-title"></h2>
             <button id="restart-btn">Main Lagi</button>
+        </div>
+    </div>
+
+    <!-- Pawn Promotion Modal -->
+    <div id="promotion-modal" class="hidden">
+        <div class="promotion-content">
+            <h3>PILIH PROMOSI</h3>
+            <div class="promotion-choices">
+                <div class="promotion-piece" data-piece="q">♕</div>
+                <div class="promotion-piece" data-piece="r">♖</div>
+                <div class="promotion-piece" data-piece="b">♗</div>
+                <div class="promotion-piece" data-piece="n">♘</div>
+            </div>
         </div>
     </div>
 

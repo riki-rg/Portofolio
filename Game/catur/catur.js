@@ -12,6 +12,14 @@ const PIECE_VALUES = {
     'P': -10, 'N': -30, 'B': -30, 'R': -50, 'Q': -90, 'K': -900
 };
 
+// Difficulty settings
+const DIFFICULTY_SETTINGS = {
+    easy: { depth: 1, name: 'Mudah' },
+    medium: { depth: 2, name: 'Sedang' },
+    hard: { depth: 3, name: 'Sulit' },
+    insane: { depth: 4, name: 'Gila' }
+};
+
 // Game state
 let board = [];
 let selectedSquare = null;
@@ -21,6 +29,13 @@ let capturedPieces = { white: [], black: [] };
 let isGameOver = false;
 let lastMove = null;
 let kingPositions = { white: null, black: null };
+let difficulty = 'hard';
+let canCastle = {
+    white: { kingSide: true, queenSide: true },
+    black: { kingSide: true, queenSide: true }
+};
+let enPassantTarget = null;
+let promotionPending = null;
 
 // DOM elements
 const chessboard = document.getElementById('chessboard');
@@ -32,6 +47,35 @@ const restartBtn = document.getElementById('restart-btn');
 const capturedWhiteDiv = document.getElementById('captured-white');
 const capturedBlackDiv = document.getElementById('captured-black');
 const moveHistoryDiv = document.getElementById('move-history');
+const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+const promotionModal = document.getElementById('promotion-modal');
+const promotionPieces = document.querySelectorAll('.promotion-piece');
+
+// Difficulty selector
+difficultyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        difficulty = btn.dataset.difficulty;
+        difficultyBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+// Promotion piece selection
+promotionPieces.forEach(piece => {
+    piece.addEventListener('click', () => {
+        if (promotionPending) {
+            const newPiece = promotionPending.isWhite ? piece.dataset.piece : piece.dataset.piece.toUpperCase();
+            board[promotionPending.row][promotionPending.col] = newPiece;
+            promotionPending = null;
+            promotionModal.classList.add('hidden');
+            renderBoard();
+            
+            if (!isGameOver && currentPlayer === 'black') {
+                setTimeout(() => aiMove(), 500);
+            }
+        }
+    });
+});
 
 // Initialize board
 function initBoard() {
@@ -53,6 +97,12 @@ function initBoard() {
     capturedPieces = { white: [], black: [] };
     isGameOver = false;
     lastMove = null;
+    canCastle = {
+        white: { kingSide: true, queenSide: true },
+        black: { kingSide: true, queenSide: true }
+    };
+    enPassantTarget = null;
+    promotionPending = null;
     
     updateCapturedDisplay();
     updateMoveHistory();
@@ -74,7 +124,10 @@ function renderBoard() {
             
             const piece = board[row][col];
             if (piece) {
-                square.textContent = PIECES[piece];
+                const pieceSpan = document.createElement('span');
+                pieceSpan.textContent = PIECES[piece];
+                pieceSpan.className = piece === piece.toLowerCase() ? 'white-piece' : 'black-piece';
+                square.appendChild(pieceSpan);
             }
             
             // Highlight selected square
@@ -123,10 +176,10 @@ function handleSquareClick(row, col) {
         const validMove = moves.find(m => m.row === row && m.col === col);
         
         if (validMove) {
-            makeMove(selectedSquare.row, selectedSquare.col, row, col);
+            makeMove(selectedSquare.row, selectedSquare.col, row, col, validMove);
             selectedSquare = null;
             
-            if (!isGameOver) {
+            if (!isGameOver && !promotionPending) {
                 setTimeout(() => {
                     aiMove();
                 }, 500);
@@ -200,7 +253,7 @@ function getPawnMoves(row, col, isWhite) {
         
         // Double move from start
         if (row === startRow && !board[row + 2 * direction][col]) {
-            moves.push({ row: row + 2 * direction, col });
+            moves.push({ row: row + 2 * direction, col, isDoublePawnMove: true });
         }
     }
     
@@ -211,6 +264,11 @@ function getPawnMoves(row, col, isWhite) {
         if (isValidSquare(newRow, newCol) && board[newRow][newCol] && 
             isPlayerPiece(board[newRow][newCol], isWhite ? 'black' : 'white')) {
             moves.push({ row: newRow, col: newCol });
+        }
+        
+        // En passant
+        if (enPassantTarget && enPassantTarget.row === newRow && enPassantTarget.col === newCol) {
+            moves.push({ row: newRow, col: newCol, isEnPassant: true });
         }
     }
     
@@ -266,6 +324,35 @@ function getKingMoves(row, col, isWhite) {
             }
         }
     }
+    
+    // Castling
+    const player = isWhite ? 'white' : 'black';
+    const kingRow = isWhite ? 7 : 0;
+    
+    // King-side castling
+    if (canCastle[player].kingSide && row === kingRow && col === 4) {
+        if (!board[kingRow][5] && !board[kingRow][6] && board[kingRow][7]) {
+            // Check if king doesn't pass through check
+            if (!isKingInCheck(player) && 
+                !wouldBeInCheck(row, col, kingRow, 5, player) &&
+                !wouldBeInCheck(row, col, kingRow, 6, player)) {
+                moves.push({ row: kingRow, col: 6, isCastling: true, castlingSide: 'king' });
+            }
+        }
+    }
+    
+    // Queen-side castling
+    if (canCastle[player].queenSide && row === kingRow && col === 4) {
+        if (!board[kingRow][3] && !board[kingRow][2] && !board[kingRow][1] && board[kingRow][0]) {
+            // Check if king doesn't pass through check
+            if (!isKingInCheck(player) && 
+                !wouldBeInCheck(row, col, kingRow, 3, player) &&
+                !wouldBeInCheck(row, col, kingRow, 2, player)) {
+                moves.push({ row: kingRow, col: 2, isCastling: true, castlingSide: 'queen' });
+            }
+        }
+    }
+    
     return moves;
 }
 
@@ -300,9 +387,23 @@ function isValidSquare(row, col) {
 }
 
 // Make a move
-function makeMove(fromRow, fromCol, toRow, toCol) {
+function makeMove(fromRow, fromCol, toRow, toCol, moveData = {}) {
     const piece = board[fromRow][fromCol];
     const captured = board[toRow][toCol];
+    const isWhite = piece === piece.toLowerCase();
+    const player = isWhite ? 'white' : 'black';
+    
+    // Handle en passant capture
+    if (moveData.isEnPassant) {
+        const capturedPawnRow = isWhite ? toRow + 1 : toRow - 1;
+        const capturedPawn = board[capturedPawnRow][toCol];
+        if (capturedPawn) {
+            const capturedColor = capturedPawn === capturedPawn.toLowerCase() ? 'white' : 'black';
+            capturedPieces[capturedColor].push(capturedPawn);
+            board[capturedPawnRow][toCol] = '';
+            updateCapturedDisplay();
+        }
+    }
     
     // Capture piece
     if (captured) {
@@ -311,13 +412,50 @@ function makeMove(fromRow, fromCol, toRow, toCol) {
         updateCapturedDisplay();
     }
     
+    // Handle castling
+    if (moveData.isCastling) {
+        const kingRow = isWhite ? 7 : 0;
+        if (moveData.castlingSide === 'king') {
+            // Move rook from h-file to f-file
+            board[kingRow][5] = board[kingRow][7];
+            board[kingRow][7] = '';
+        } else {
+            // Move rook from a-file to d-file
+            board[kingRow][3] = board[kingRow][0];
+            board[kingRow][0] = '';
+        }
+        canCastle[player].kingSide = false;
+        canCastle[player].queenSide = false;
+    }
+    
     // Move piece
     board[toRow][toCol] = piece;
     board[fromRow][fromCol] = '';
     
-    // Update king position
+    // Update castling rights
     if (piece.toLowerCase() === 'k') {
-        kingPositions[currentPlayer] = { row: toRow, col: toCol };
+        kingPositions[player] = { row: toRow, col: toCol };
+        canCastle[player].kingSide = false;
+        canCastle[player].queenSide = false;
+    }
+    
+    if (piece.toLowerCase() === 'r') {
+        if (fromCol === 0) canCastle[player].queenSide = false;
+        if (fromCol === 7) canCastle[player].kingSide = false;
+    }
+    
+    // Set en passant target
+    if (moveData.isDoublePawnMove) {
+        enPassantTarget = { row: isWhite ? toRow + 1 : toRow - 1, col: toCol };
+    } else {
+        enPassantTarget = null;
+    }
+    
+    // Check for pawn promotion
+    if (piece.toLowerCase() === 'p' && (toRow === 0 || toRow === 7)) {
+        promotionPending = { row: toRow, col: toCol, isWhite: isWhite };
+        promotionModal.classList.remove('hidden');
+        return; // Don't switch player yet
     }
     
     // Record move
@@ -465,7 +603,14 @@ function aiMove() {
         const bestMove = findBestMove();
         
         if (bestMove) {
-            makeMove(bestMove.fromRow, bestMove.fromCol, bestMove.toRow, bestMove.toCol);
+            makeMove(bestMove.fromRow, bestMove.fromCol, bestMove.toRow, bestMove.toCol, bestMove);
+            
+            // Handle AI pawn promotion (always choose queen)
+            if (promotionPending) {
+                board[promotionPending.row][promotionPending.col] = 'Q';
+                promotionPending = null;
+                renderBoard();
+            }
         }
         
         aiThinking.classList.add('hidden');
@@ -479,6 +624,7 @@ function findBestMove() {
     let bestMove = null;
     
     const allMoves = getAllPossibleMoves('black');
+    const searchDepth = DIFFICULTY_SETTINGS[difficulty].depth;
     
     for (const move of allMoves) {
         // Simulate move
@@ -490,7 +636,7 @@ function findBestMove() {
         board[move.fromRow][move.fromCol] = '';
         if (oldKingPos) kingPositions.black = { row: move.toRow, col: move.toCol };
         
-        const moveValue = minimax(2, -Infinity, Infinity, false);
+        const moveValue = minimax(searchDepth, -Infinity, Infinity, false);
         
         // Undo move
         board[move.fromRow][move.fromCol] = piece;
@@ -589,7 +735,11 @@ function getAllPossibleMoves(player) {
                         fromRow: row,
                         fromCol: col,
                         toRow: move.row,
-                        toCol: move.col
+                        toCol: move.col,
+                        isCastling: move.isCastling,
+                        castlingSide: move.castlingSide,
+                        isEnPassant: move.isEnPassant,
+                        isDoublePawnMove: move.isDoublePawnMove
                     });
                 });
             }
