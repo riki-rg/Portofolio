@@ -112,6 +112,10 @@ function initBoard() {
     enPassantTarget = null;
     promotionPending = null;
     
+    // Make sure promotion modal is hidden
+    promotionModal.classList.add('hidden');
+    gameOverDiv.classList.add('hidden');
+    
     updateCapturedDisplay();
     updateMoveHistory();
     renderBoard();
@@ -800,5 +804,9 @@ function restartGame() {
 // Event listeners
 restartBtn.addEventListener('click', restartGame);
 
-// Initialize
-initBoard();
+// Initialize game after DOM is fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBoard);
+} else {
+    initBoard();
+}
